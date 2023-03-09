@@ -387,9 +387,25 @@ template {
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "";
+  font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2");
+  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Roboto Condensed";
+  font-display: swap;
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "PT Mono";
+  font-display: swap;
+  src: url("../fonts/PTMono-Regular.woff2") format("woff2");
 }
 
 *,
@@ -617,6 +633,14 @@ button,
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.reset-list {
+  padding: 0;
+}
+
+.reset-list li::marker {
+  color: transparent;
 }
 
 .btn {

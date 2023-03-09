@@ -1,0 +1,25 @@
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-navigation__logo {
+  flex: 0 0 20%;
+  max-width: 20%;
+  min-width: 215px;
+  margin-right: 20px;
+  padding-top: 5px;
+}
+
+.main-navigation__contacts {
+  flex: 1 1 80%;
+  max-width: 80%;
+  margin: 0;
+  padding-right: 63px;
+}
+
+.main-navigation__button {
+  flex: 0 0 auto;
+  margin-right: 62px;
+}

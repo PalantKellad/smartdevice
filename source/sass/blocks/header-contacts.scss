@@ -9,13 +9,14 @@
   flex: 1 1 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 0;
+  padding-right: 53px;
 }
 
 .header-contacts__item:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 121px;
 }
 
 .header-contacts__link {

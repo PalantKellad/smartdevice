@@ -10,6 +10,10 @@
   min-width: 215px;
   margin-right: 20px;
   padding-top: 5px;
+
+  &:hover {
+    opacity: var(--hover-opacity);
+  }
 }
 
 .main-navigation__contacts {
@@ -17,6 +21,10 @@
   max-width: 80%;
   margin: 0;
   padding-right: 63px;
+
+  @include vp-767 {
+    padding: 0;
+  }
 }
 
 .main-navigation__button {

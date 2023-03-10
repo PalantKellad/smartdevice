@@ -16,6 +16,7 @@ $color-whisper:                     #e5e5e5;
 $color-black-pearl:                 #041827;
 $color-deep-sky-blue:               #00b3ff;
 $color-alice-blue:                  #f2f5f7;
+$color-endeavour:                   #216695;
 
 // Gradient
 
@@ -59,11 +60,13 @@ $vp-1920:                           1920px;
 
 // Content Max-widths
 // ---------------------------------
-$ctmw-big: 1222px;
+$cntwidth-big:                      1222px;
+$cntwidth-medium:                   670px;
 
 // Paddings
 // ---------------------------------
 $pd-big:                            50px;
+$pd-medium:                         50px;
 
 // Retina
 // ---------------------------------
@@ -74,9 +77,13 @@ $retina-dppx:                       1.5dppx;
 // Custom Properties
 // ---------------------------------
 :root {
-  //Colors
-  --themed-dark: #041827;
-  --themed-light: #00b3ff;
-  --base-neutral: #e5e5e5;
-  --base-light: #f2f5f7;
+  // Colors
+  --themed-dark:                     #{$color-black-pearl};
+  --themed-neutral:                  #{$color-endeavour};
+  --themed-light:                    #{$color-deep-sky-blue};
+  --base-neutral:                    #{$color-whisper};
+  --base-light:                      #{$color-alice-blue};
+
+  // Opacity
+  --hover-opacity:                   0.7;
 }

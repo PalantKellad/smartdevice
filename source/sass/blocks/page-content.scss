@@ -2,3 +2,8 @@
   font: 400 16px/22px $ff-placeholder;
   color: var(--themed-dark);
 }
+
+.page-content__header {
+  position: sticky;
+  top: 0;
+}

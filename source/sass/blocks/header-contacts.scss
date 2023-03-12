@@ -4,6 +4,16 @@
   row-gap: 20px;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 63px;
+
+  @include vp-1023 {
+    padding: 0;
+    padding-bottom: 13px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
 }
 
 .header-contacts__list {
@@ -17,10 +27,15 @@
   padding-right: 138px;
   padding-left: 112px;
 
-  @include vp-767 {
+  @include vp-1023 {
     justify-content: flex-end;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @include vp-767 {
+    padding-left: 11px;
+    padding-right: 11px;
   }
 }
 
@@ -28,7 +43,7 @@
   flex: 1 1 45%;
   max-width: 50%;
 
-  @include vp-767 {
+  @include vp-1023 {
     flex: 1 1 40px;
     max-width: 40px;
     padding: 0;
@@ -39,6 +54,7 @@
   --color: var(--base-light);
 
   display: flex;
+  align-items: center;
   font: 400 16px/18px $ff-placeholder;
   color: var(--color);
 
@@ -48,7 +64,8 @@
     min-width: 20px;
     height: 20px;
     margin-right: 15px;
-    background-color: red;
+    background: var(--image-url);
+    filter: var(--filter);
   }
 
   &:hover {
@@ -60,10 +77,19 @@
   }
 
   &:active {
+    --filter: var(--active-filter);
     opacity: var(--hover-opacity);
   }
 
-  @include vp-767 {
+  &--email {
+    --image-url: url('../img/stack.svg#icon-email')
+  }
+
+  &--phone {
+    --image-url: url('../img/stack.svg#icon-phone')
+  }
+
+  @include vp-1023 {
     padding: 10px;
     font-size: 0;
   }
@@ -78,7 +104,7 @@
   align-items: center;
   gap: 20px;
 
-  @include vp-767 {
+  @include vp-1023 {
     display: none;
   }
 }
@@ -97,6 +123,7 @@
   border: 1px solid var(--color);
   border-radius: 3px;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     --color: var(--themed-light);
@@ -115,18 +142,6 @@
     --color: var(--base-light);
 
     opacity: 0.5;
-    cursor: auto;
-  }
-
-  &--disabled:hover {
-    --color: var(--base-light);
-  }
-
-  &--disabled:focus {
-    --color: var(--base-light);
-  }
-
-  &--disabled:active {
-    background-color: transparent;
+    pointer-events: none;
   }
 }

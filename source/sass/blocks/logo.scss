@@ -1,0 +1,26 @@
+.logo {
+  min-width: 215px;
+
+  @include hover {
+    opacity: var(--hover-opacity);
+  }
+
+  @include focus {
+    opacity: var(--hover-opacity);
+  }
+
+  @include active {
+    opacity: 1;
+    filter: var(--active-filter);
+  }
+
+  @include vp-767 {
+    min-width: 35px;
+  }
+
+  &--footer {
+    @include vp-767 {
+      min-width: 215px;
+    }
+  }
+}

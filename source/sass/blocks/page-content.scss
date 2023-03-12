@@ -6,4 +6,8 @@
 .page-content__header {
   position: sticky;
   top: 0;
+
+  @include vp-1023 {
+    position: static;
+  }
 }

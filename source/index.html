@@ -10,10 +10,13 @@
   </head>
   <body>
     <div class="page-content wrapper">
-      <header class="page-content__header header main-header">
+      <header class="page-content__header container header main-header">
         <nav class="main-header__navigation main-navigation">
-          <a class="main-navigation__logo" href="/">
-            <img class="image" src="../img/svg/logo-full.svg" width="215" height="55" alt="Логотип компании Smart Device.">
+          <a class="main-navigation__logo logo" href="/">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/svg/logo-short.svg" width="35" height="35">
+              <img class="image" src="img/svg/logo-full.svg" width="215" height="55" alt="Логотип магазина Drink2Go.">
+            </picture>
           </a>
           <div class="main-navigation__contacts header-contacts">
             <ul class="header-contacts__list reset-list">
@@ -21,7 +24,7 @@
                 <a class="header-contacts__link header-contacts__link--email" href="mailto:info@sd.ru">info@sd.ru</a>
               </li>
               <li class="header-contacts__item">
-                <a class="header-contacts__link header-contacts__link--phone" href="tel:+74950005252">+7 (495) 000 52&nbsp;52</a>
+                <a class="header-contacts__link header-contacts__link--phone" href="tel:+74950005252">+7 (495) 000&nbsp;52&nbsp;52</a>
               </li>
             </ul>
             <div class="header-contacts__buttons">
@@ -30,11 +33,81 @@
           </div>
         </nav>
       </header>
-      <main style="background-color: steelblue; min-height: 1000px;">
+      <main style="background-color: steelblue; min-height: 500px;">
       </main>
-      <footer class="footer">
+      <footer class="footer container main-footer accordion" data-accordion="parent" data-destroy="(max-width: 767px)">
+        <div class="main-footer__container">
+          <section class="main-footer__section main-footer__section--about">
+            <h2 data-visually-hidden="true">Компания</h2>
+            <a class="main-footer__logo logo logo--footer" href="/">
+              <img class="image" src="img/svg/logo-full.svg" width="215" height="55" alt="Логотип магазина Drink2Go.">
+            </a>
+            <ul class="main-footer__social social reset-list">
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <span class="visually-hidden">Одноклассники</span>
+                  <svg class="social__img" width="30" height="30" aria-hidden="true" focusable="false">
+                    <use href="img/stack.svg#icon-social-ok" />
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <span class="visually-hidden">Вконтакте</span>
+                  <svg class="social__img" width="30" height="30" aria-hidden="true" focusable="false">
+                    <use href="img/stack.svg#icon-social-vk" />
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <span class="visually-hidden">Pinterest</span>
+                  <svg class="social__img" width="30" height="30" aria-hidden="true" focusable="false">
+                    <use href="img/stack.svg#icon-social-pinterest" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section class="main-footer__section main-footer__section--sections-menu accordion__element" data-accordion="element">
+            <h2 class="accordion__button" data-accordion="button">Разделы сайта</h2>
+            <ul class="main-footer__menu sections-menu reset-list accordion__content" data-accordion="content">
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="about.html">О&nbsp;компании</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="products.html">Продукты</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="manufacture.html">Производство печатных плат</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="assembling.html">Монтаж печатных плат</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="accessories.html">Комплектующие</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="delivery.html">Доставка</a>
+              </li>
+              <li class="sections-menu__item">
+                <a class="sections-menu__link" href="contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </section>
+          <section class="main-footer__section main-footer__section--address accordion__element" data-accordion="element">
+            <h2 class="accordion__button" data-accordion="button">Наш офис</h2>
+            <address class="accordion__content" data-accordion="content">
+              <p>г.&nbsp;Мытищи, Олимпийский проспект, д.10</p>
+              <ul>
+                <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+                <li><a href="tel:+79253895829">+7 (925) 389-58-29</a></li>
+                <li><a href="tel:+79253647813">+7 (925) 364-78-13</a></li>
+              </ul>
+            </address>
+          </section>
+        </div>
       </footer>
-    </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

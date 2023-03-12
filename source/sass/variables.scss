@@ -16,6 +16,8 @@ $color-whisper:                     #e5e5e5;
 $color-black-pearl:                 #041827;
 $color-deep-sky-blue:               #00b3ff;
 $color-alice-blue:                  #f2f5f7;
+$color-alice-blue-light:            #f8fdff;
+$color-alice-blue-light-op07:       rgba(248, 253, 255, 0.7);
 $color-endeavour:                   #216695;
 
 // Gradient
@@ -58,15 +60,20 @@ $vp-1440:                           1440px;
 $vp-1920:                           1920px;
 
 
-// Content Max-widths
+// Content widths
 // ---------------------------------
-$cntwidth-big:                      1222px;
-$cntwidth-medium:                   670px;
+$cnt-max-width-big:                      1222px;
+$cnt-max-width-medium:                   100%;
+$cnt-max-width-small:                    100%;
+$cnt-min-width-big:                      0;
+$cnt-min-width-medium:                   0;
+$cnt-min-width-small:                    270px;
 
 // Paddings
 // ---------------------------------
 $pd-big:                            50px;
 $pd-medium:                         50px;
+$pd-small:                          25px;
 
 // Retina
 // ---------------------------------
@@ -83,7 +90,12 @@ $retina-dppx:                       1.5dppx;
   --themed-light:                    #{$color-deep-sky-blue};
   --base-neutral:                    #{$color-whisper};
   --base-light:                      #{$color-alice-blue};
+  --base-lightest:                   #{$color-alice-blue-light};
+  --base-lightest-op07:              #{$color-alice-blue-light-op07};
+  --pure-light:                      #{$color-default-white};
 
-  // Opacity
+  // States
   --hover-opacity:                   0.7;
+  --menu-opacity:                    0.7;
+  --active-filter:                   hue-rotate(90deg);
 }

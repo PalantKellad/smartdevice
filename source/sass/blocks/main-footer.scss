@@ -1,40 +1,27 @@
 .main-footer {
   min-height: 280px;
   padding-top: 50px;
-  padding-bottom: 55px;
+  padding-bottom: 17px;
   color: var(--base-light);
   background: var(--themed-dark);
 
   h2 {
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
     font: 400 15px/22px $ff-headings;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
-  h2[data-visually-hidden] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(100%);
-  }
-
   address {
     font: 400 16px/22px $ff-placeholder;
     color: var(--pure-light);
-    opacity: var(--menu-opacity);
   }
 
   address p {
     margin: 0;
     padding: 5px 0;
+    opacity: var(--menu-opacity);
 
     @include vp-767 {
       font-size: 14px;
@@ -47,7 +34,7 @@
   }
 
   address li {
-    padding: 3px 0;
+    padding: 4px 0;
   }
 
   address li::marker {
@@ -55,9 +42,24 @@
   }
 
   address a {
+    --color: var(--pure-light);
+
     font: 400 16px/22px $ff-placeholder;
-    color: var(--pure-light);
+    color: var(--color);
+    opacity: var(--menu-opacity);
     user-select: none;
+
+    @include hover {
+      --color: var(--themed-light);
+    }
+
+    @include focus {
+      --color: var(--themed-light);
+    }
+
+    @include active {
+      opacity: 1;
+    }
 
     @include vp-767 {
       font-size: 14px;
@@ -66,7 +68,7 @@
 
   @include vp-1023 {
     min-height: 100px;
-    padding-bottom: 65px;
+    padding-bottom: 7px;
   }
 
   @include vp-767 {
@@ -89,6 +91,7 @@
 .main-footer__section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 
   @include vp-767 {
     margin-bottom: 15px;
@@ -102,7 +105,7 @@
     flex: 0 0 20%;
     max-width: 20%;
     min-width: 215px;
-    margin-right: 132px;
+    margin-right: 10.7%;
 
     @include vp-1023 {
       flex: 0 0 100%;
@@ -110,7 +113,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
     }
 
     @include vp-767 {
@@ -121,13 +123,14 @@
   }
 
   &--sections-menu {
-    flex: 1 1 40%;
+    flex: 1 1 37%;
     max-width: 40%;
     padding-top: 4px;
 
     @include vp-1023 {
-      flex-basis: 32%;
-      max-width: 32%;
+      flex-basis: 51.5%;
+      max-width: 100%;
+      padding-right: 110px;
     }
 
     @include vp-767 {
@@ -137,15 +140,14 @@
   }
 
   &--address {
-    flex: 1 1 27.5%;
-    max-width: 27.5%;
+    flex: 1 1 28.3%;
+    max-width: 28.3%;
     margin-left: auto;
-    margin-right: auto;
     padding-top: 4px;
 
     @include vp-1023 {
-      flex-basis: 48%;
-      max-width: 48%;
+      flex-basis: 47%;
+      max-width: 100%;
       margin-right: 0;
     }
 

@@ -68,15 +68,15 @@
     filter: var(--filter);
   }
 
-  &:hover {
+  @include hover {
     --color: var(--themed-light);
   }
 
-  &:focus {
+  @include focus {
     --color: var(--themed-light);
   }
 
-  &:active {
+  @include active {
     --filter: var(--active-filter);
     opacity: var(--hover-opacity);
   }
@@ -125,15 +125,15 @@
   cursor: pointer;
   user-select: none;
 
-  &:hover {
+  @include hover {
     --color: var(--themed-light);
   }
 
-  &:focus {
+  @include focus {
     --color: var(--themed-light);
   }
 
-  &:active {
+  @include active {
     --color: var(--themed-dark);
     background-color: var(--base-light);
   }

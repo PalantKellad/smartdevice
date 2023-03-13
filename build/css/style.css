@@ -388,6 +388,7 @@ template {
   --themed-dark: #041827;
   --themed-neutral: #216695;
   --themed-light: #00b3ff;
+  --themed-action: #ff63ff;
   --base-neutral: #e5e5e5;
   --base-light: #f2f5f7;
   --base-lightest: #f8fdff;
@@ -403,7 +404,7 @@ template {
   font-weight: 400;
   font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2");
+  src: url("../fonts/RobotoCondensed-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -411,7 +412,7 @@ template {
   font-weight: 700;
   font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2");
+  src: url("../fonts/RobotoCondensed-bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -419,7 +420,7 @@ template {
   font-weight: 400;
   font-family: "PT Mono";
   font-display: swap;
-  src: url("../fonts/PTMono-Regular.woff2") format("woff2");
+  src: url("../fonts/PTMono-regular.woff2") format("woff2");
 }
 
 *,
@@ -1490,11 +1491,7 @@ button,
   filter: var(--filter);
 }
 
-.header-contacts__link:hover {
-  --color: var(--themed-light);
-}
-
-.header-contacts__link:focus {
+.header-contacts__link.focus-visible:focus {
   --color: var(--themed-light);
 }
 
@@ -1549,11 +1546,7 @@ button,
   user-select: none;
 }
 
-.header-contacts__button:hover {
-  --color: var(--themed-light);
-}
-
-.header-contacts__button:focus {
+.header-contacts__button.focus-visible:focus {
   --color: var(--themed-light);
 }
 
@@ -1585,42 +1578,28 @@ button,
 .main-footer {
   min-height: 280px;
   padding-top: 50px;
-  padding-bottom: 55px;
+  padding-bottom: 17px;
   color: var(--base-light);
   background: var(--themed-dark);
 }
 
 .main-footer h2 {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   font: 400 15px/22px "Roboto Condensed", "Arial", sans-serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.main-footer h2[data-visually-hidden] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-}
-
 .main-footer address {
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
   color: var(--pure-light);
-  opacity: var(--menu-opacity);
 }
 
 .main-footer address p {
   margin: 0;
   padding: 5px 0;
+  opacity: var(--menu-opacity);
 }
 
 .main-footer address ul {
@@ -1629,7 +1608,7 @@ button,
 }
 
 .main-footer address li {
-  padding: 3px 0;
+  padding: 4px 0;
 }
 
 .main-footer address li::marker {
@@ -1637,12 +1616,22 @@ button,
 }
 
 .main-footer address a {
+  --color: var(--pure-light);
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
-  color: var(--pure-light);
+  color: var(--color);
+  opacity: var(--menu-opacity);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.main-footer address a.focus-visible:focus {
+  --color: var(--themed-light);
+}
+
+.main-footer address a:active {
+  opacity: 1;
 }
 
 .main-footer__container {
@@ -1662,6 +1651,7 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .main-footer__section--about {
@@ -1670,24 +1660,23 @@ button,
   flex: 0 0 20%;
   max-width: 20%;
   min-width: 215px;
-  margin-right: 132px;
+  margin-right: 10.7%;
 }
 
 .main-footer__section--sections-menu {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 40%;
-  flex: 1 1 40%;
+  -ms-flex: 1 1 37%;
+  flex: 1 1 37%;
   max-width: 40%;
   padding-top: 4px;
 }
 
 .main-footer__section--address {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 27.5%;
-  flex: 1 1 27.5%;
-  max-width: 27.5%;
+  -ms-flex: 1 1 28.3%;
+  flex: 1 1 28.3%;
+  max-width: 28.3%;
   margin-left: auto;
-  margin-right: auto;
   padding-top: 4px;
 }
 
@@ -1718,10 +1707,22 @@ button,
 }
 
 .social__link {
+  --color: var(--base-lightest);
   display: -ms-grid;
   display: grid;
   place-items: center;
   padding: 5px;
+  color: var(--color);
+}
+
+.social__link.focus-visible:focus {
+  --color: var(--themed-light);
+  opacity: var(--hover-opacity);
+}
+
+.social__link:active {
+  --color: var(--themed-action);
+  opacity: 1;
 }
 
 .sections-menu {
@@ -1745,13 +1746,22 @@ button,
 }
 
 .sections-menu__item {
-  padding: 4px 0 2px;
+  padding: 4px 0 4px;
 }
 
 .sections-menu__link {
+  --color: var(--pure-light);
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
-  color: var(--pure-light);
+  color: var(--color);
   opacity: var(--menu-opacity);
+}
+
+.sections-menu__link.focus-visible:focus {
+  --color: var(--themed-light);
+}
+
+.sections-menu__link:active {
+  opacity: 1;
 }
 
 /* @mixin hover-focus {
@@ -1843,7 +1853,7 @@ button,
 
   .main-footer {
     min-height: 100px;
-    padding-bottom: 65px;
+    padding-bottom: 7px;
   }
 
   .main-footer__section--about {
@@ -1861,19 +1871,19 @@ button,
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 30px;
   }
 
   .main-footer__section--sections-menu {
-    -ms-flex-preferred-size: 32%;
-    flex-basis: 32%;
-    max-width: 32%;
+    -ms-flex-preferred-size: 51.5%;
+    flex-basis: 51.5%;
+    max-width: 100%;
+    padding-right: 110px;
   }
 
   .main-footer__section--address {
-    -ms-flex-preferred-size: 48%;
-    flex-basis: 48%;
-    max-width: 48%;
+    -ms-flex-preferred-size: 47%;
+    flex-basis: 47%;
+    max-width: 100%;
     margin-right: 0;
   }
 
@@ -2072,7 +2082,28 @@ button,
     background-color: rgba(0, 0, 0, 0.4);
   }
 
+  .header-contacts__link:hover:not(.focus-visible) {
+    --color: var(--themed-light);
+  }
+
+  .header-contacts__button:hover:not(.focus-visible) {
+    --color: var(--themed-light);
+  }
+
   .logo:hover:not(.focus-visible) {
     opacity: var(--hover-opacity);
+  }
+
+  .main-footer address a:hover:not(.focus-visible) {
+    --color: var(--themed-light);
+  }
+
+  .social__link:hover:not(.focus-visible) {
+    --color: var(--themed-light);
+    opacity: var(--hover-opacity);
+  }
+
+  .sections-menu__link:hover:not(.focus-visible) {
+    --color: var(--themed-light);
   }
 }

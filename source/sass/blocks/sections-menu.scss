@@ -13,11 +13,25 @@
 }
 
 .sections-menu__item {
-  padding: 4px 0 2px;
+  padding: 4px 0 4px;
 }
 
 .sections-menu__link {
+  --color: var(--pure-light);
+
   font: 400 16px/22px $ff-placeholder;
-  color: var(--pure-light);
+  color: var(--color);
   opacity: var(--menu-opacity);
+
+  @include hover {
+    --color: var(--themed-light);
+  }
+
+  @include focus {
+    --color: var(--themed-light);
+  }
+
+  @include active {
+    opacity: 1;
+  }
 }

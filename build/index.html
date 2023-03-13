@@ -35,10 +35,9 @@
       </header>
       <main style="background-color: steelblue; min-height: 500px;">
       </main>
-      <footer class="footer container main-footer accordion" data-accordion="parent" data-destroy="(max-width: 767px)">
+      <footer class="footer container main-footer" data-accordion="parent" data-destroy="(max-width: 767px)">
         <div class="main-footer__container">
-          <section class="main-footer__section main-footer__section--about">
-            <h2 data-visually-hidden="true">Компания</h2>
+          <div class="main-footer__section main-footer__section--about">
             <a class="main-footer__logo logo logo--footer" href="/">
               <img class="image" src="img/svg/logo-full.svg" width="215" height="55" alt="Логотип магазина Drink2Go.">
             </a>
@@ -68,10 +67,10 @@
                 </a>
               </li>
             </ul>
-          </section>
-          <section class="main-footer__section main-footer__section--sections-menu accordion__element" data-accordion="element">
-            <h2 class="accordion__button" data-accordion="button">Разделы сайта</h2>
-            <ul class="main-footer__menu sections-menu reset-list accordion__content" data-accordion="content">
+          </div>
+          <section class="main-footer__section main-footer__section--sections-menu" data-accordion="element">
+            <h2 data-accordion="button">Разделы сайта</h2>
+            <ul class="main-footer__menu sections-menu reset-list" data-accordion="content">
               <li class="sections-menu__item">
                 <a class="sections-menu__link" href="about.html">О&nbsp;компании</a>
               </li>
@@ -95,9 +94,9 @@
               </li>
             </ul>
           </section>
-          <section class="main-footer__section main-footer__section--address accordion__element" data-accordion="element">
-            <h2 class="accordion__button" data-accordion="button">Наш офис</h2>
-            <address class="accordion__content" data-accordion="content">
+          <section class="main-footer__section main-footer__section--address" data-accordion="element">
+            <h2 data-accordion="button">Наш офис</h2>
+            <address data-accordion="content">
               <p>г.&nbsp;Мытищи, Олимпийский проспект, д.10</p>
               <ul>
                 <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>

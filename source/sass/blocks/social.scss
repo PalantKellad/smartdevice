@@ -5,7 +5,25 @@
 }
 
 .social__link {
+  --color: var(--base-lightest);
+
   display: grid;
   place-items: center;
   padding: 5px;
+  color: var(--color);
+
+  @include hover {
+    --color: var(--themed-light);
+    opacity: var(--hover-opacity);
+  }
+
+  @include focus {
+    --color: var(--themed-light);
+    opacity: var(--hover-opacity);
+  }
+
+  @include active {
+    --color: var(--themed-action);
+    opacity: 1;
+  }
 }

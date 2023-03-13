@@ -1623,6 +1623,10 @@ button,
   display: contents;
 }
 
+.main-footer__toggle {
+  display: none;
+}
+
 .main-footer__toggle::before {
   content: "";
   position: absolute;

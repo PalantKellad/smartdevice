@@ -112,6 +112,8 @@
 }
 
 .main-footer__toggle {
+  display: none;
+
   @include vp-767 {
     --scale: scale(0);
     --color: var(--base-lightest);

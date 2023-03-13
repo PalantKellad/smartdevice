@@ -1632,7 +1632,7 @@ button,
   width: 15px;
   height: 1px;
   margin-bottom: 4px;
-  background-color: var(--base-lightest);
+  background-color: var(--color);
   -webkit-transform: rotate(90deg) var(--scale);
   -ms-transform: rotate(90deg) var(--scale);
   transform: rotate(90deg) var(--scale);
@@ -1650,7 +1650,7 @@ button,
   width: 15px;
   height: 1px;
   margin-bottom: 4px;
-  background-color: var(--base-lightest);
+  background-color: var(--color);
 }
 
 .main-footer__toggle--active::before {
@@ -1658,6 +1658,14 @@ button,
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+
+.main-footer__toggle:focus {
+  --color: var(--themed-light);
+}
+
+.main-footer__toggle:active {
+  --color: var(--themed-light);
 }
 
 .main-footer__section {
@@ -1998,6 +2006,7 @@ button,
 
   .main-footer__toggle {
     --scale: scale(0);
+    --color: var(--base-lightest);
     position: absolute;
     inset: 0;
     display: block;

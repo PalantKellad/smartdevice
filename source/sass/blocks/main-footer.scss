@@ -114,6 +114,7 @@
 .main-footer__toggle {
   @include vp-767 {
     --scale: scale(0);
+    --color: var(--base-lightest);
 
     position: absolute;
     inset: 0;
@@ -135,7 +136,7 @@
     width: 15px;
     height: 1px;
     margin-bottom: 4px;
-    background-color: var(--base-lightest);
+    background-color: var(--color);
     transform: rotate(90deg) var(--scale);
     transition: $trans-default;
   }
@@ -149,7 +150,7 @@
     width: 15px;
     height: 1px;
     margin-bottom: 4px;
-    background-color: var(--base-lightest);
+    background-color: var(--color);
   }
 
   &--active {
@@ -158,6 +159,14 @@
 
       transition: $trans-default;
     }
+  }
+
+  &:focus {
+    --color: var(--themed-light);
+  }
+
+  &:active {
+    --color: var(--themed-light);
   }
 }
 

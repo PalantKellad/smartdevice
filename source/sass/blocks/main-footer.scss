@@ -11,6 +11,10 @@
     font: 400 15px/22px $ff-headings;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    @include vp-767 {
+      margin-bottom: 9px;
+    }
   }
 
   address {
@@ -24,7 +28,9 @@
     opacity: var(--menu-opacity);
 
     @include vp-767 {
+      margin-bottom: 9px;
       font-size: 14px;
+      line-height: 19px;
     }
   }
 
@@ -47,7 +53,6 @@
     font: 400 16px/22px $ff-placeholder;
     color: var(--color);
     opacity: var(--menu-opacity);
-    user-select: none;
 
     @include hover {
       --color: var(--themed-light);
@@ -85,6 +90,74 @@
 
   @include vp-767 {
     grid-column: full;
+  }
+}
+
+.main-footer__accordion {
+  display: contents;
+
+  @include vp-767 {
+    display: block;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.main-footer__accordion h2 {
+  @include vp-767 {
+    position: relative;
+  }
+}
+
+.main-footer__toggle {
+  @include vp-767 {
+    --scale: scale(0);
+
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    font-size: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 1px;
+    display: block;
+    width: 15px;
+    height: 1px;
+    margin-bottom: 4px;
+    background-color: var(--base-lightest);
+    transform: rotate(90deg) var(--scale);
+    transition: $trans-default;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 1px;
+    display: block;
+    width: 15px;
+    height: 1px;
+    margin-bottom: 4px;
+    background-color: var(--base-lightest);
+  }
+
+  &--active {
+    &::before {
+      --scale: scale(1);
+
+      transition: $trans-default;
+    }
   }
 }
 
@@ -136,6 +209,8 @@
     @include vp-767 {
       flex-basis: 100%;
       max-width: 100%;
+      margin-bottom: 14px;
+      padding-bottom: 9px;
     }
   }
 
@@ -154,6 +229,8 @@
     @include vp-767 {
       flex-basis: 100%;
       max-width: 100%;
+      margin-bottom: 15px;
+      padding-bottom: 13px;
     }
   }
 }

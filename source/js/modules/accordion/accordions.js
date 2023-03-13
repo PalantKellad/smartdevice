@@ -111,12 +111,14 @@ export class Accordions {
   openAccordion(element, transition = true) {
     const parentElement = element.closest('[data-accordion="parent"]');
     const contentElement = element.querySelector('[data-accordion="content"]');
+    const buttonElement = element.querySelector('[data-accordion="button"]');
     this._openHeight += contentElement.scrollHeight;
 
     if (parentElement.hasAttribute('data-single')) {
       this.closeAllAccordion(parentElement);
     }
 
+    buttonElement.classList.add('main-footer__toggle--active');
     element.classList.add('is-active');
     if (transition) {
       contentElement.style.maxHeight = `${this._openHeight}px`;
@@ -138,9 +140,12 @@ export class Accordions {
 
   closeAccordion(element, transition = true) {
     const contentElement = element.querySelector('[data-accordion="content"]');
+    const buttonElement = element.querySelector('[data-accordion="button"]');
     if (!contentElement) {
       return;
     }
+
+    buttonElement.classList.remove('main-footer__toggle--active');
     element.classList.remove('is-active');
     if (transition) {
       contentElement.style.maxHeight = '0';

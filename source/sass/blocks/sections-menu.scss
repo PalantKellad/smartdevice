@@ -10,6 +10,11 @@
     margin: 0;
     color: transparent;
   }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .sections-menu__item {
@@ -22,6 +27,7 @@
   font: 400 16px/22px $ff-placeholder;
   color: var(--color);
   opacity: var(--menu-opacity);
+  user-select: none;
 
   @include hover {
     --color: var(--themed-light);

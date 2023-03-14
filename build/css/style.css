@@ -390,6 +390,7 @@ template {
   --themed-light: #00b3ff;
   --themed-action: #ff63ff;
   --base-neutral: #e5e5e5;
+  --base-neutral-light: #ebebeb;
   --base-light: #f2f5f7;
   --base-lightest: #f8fdff;
   --base-lightest-op07: rgba(248, 253, 255, 0.7);
@@ -1847,9 +1848,66 @@ button,
   --bg-color: var(--base-light);
 }
 
+.hero__container a--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .hero__container span {
   position: absolute;
   font-size: 0;
+}
+
+.advantages {
+  padding-top: 120px;
+}
+
+.advantages__container {
+  grid-column: main;
+}
+
+.advantages__container dl {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  margin: 0;
+}
+
+.advantages__item {
+  --color: var(--themed-light)
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 45px 40px;
+  color: var(--color);
+  border: 1px solid var(--base-neutral-light);
+}
+
+.advantages__item::before {
+  content: "";
+  display: block;
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  background-color: var(--color);
+  -webkit-mask: var(--bg-url);
+  mask: var(--bg-url);
+}
+
+.advantages__item dt {
+  margin-bottom: 15px;
+  font: 400 24px/34px "Roboto Condensed", "Arial", sans-serif;
+  color: var(--themed-light);
+}
+
+.advantages__item dd {
+  margin: 0;
+  font: 400 16px/22px "PT Mono", "Times New Roman", serif;
+  color: var(--themed-dark);
 }
 
 /* @mixin hover-focus {

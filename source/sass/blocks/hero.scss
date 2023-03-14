@@ -134,6 +134,11 @@
       --color: var(--themed-dark);
       --border-color: var(--themed-dark);
     }
+
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 
   span {

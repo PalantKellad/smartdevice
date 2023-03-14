@@ -4,7 +4,7 @@
   row-gap: 20px;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 63px;
+  padding-right: 5.1%;
 
   @include vp-1023 {
     padding: 0;
@@ -22,13 +22,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  column-gap: 121px;
+  row-gap: 20px;
   margin: 0;
-  padding-right: 138px;
-  padding-left: 112px;
+  padding-right: 15.3%;
+  padding-left: 12.5%;
 
   @include vp-1023 {
     justify-content: flex-end;
+    column-gap: 20px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -40,8 +42,8 @@
 }
 
 .header-contacts__item {
-  flex: 1 1 45%;
-  max-width: 50%;
+  flex: 0 1 auto;
+  max-width: 100%;
 
   @include vp-1023 {
     flex: 1 1 40px;
@@ -55,7 +57,7 @@
 
   display: flex;
   align-items: center;
-  font: 400 16px/18px $ff-placeholder;
+  font: 400 16px/18px $ff-main;
   color: var(--color);
 
   &::before {
@@ -82,11 +84,11 @@
   }
 
   &--email {
-    --image-url: url('../img/stack.svg#icon-email')
+    --image-url: url("../img/stack.svg#icon-email");
   }
 
   &--phone {
-    --image-url: url('../img/stack.svg#icon-phone')
+    --image-url: url("../img/stack.svg#icon-phone");
   }
 
   @include vp-1023 {
@@ -113,11 +115,14 @@
   --color: var(--base-light);
 
   display: block;
-  min-width: 60px;
+  min-width: 10ch;
   padding: 10px 15px;
   font: 700 14px/16px $ff-headings;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.05em;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color);
   background-color: transparent;
   border: 1px solid var(--color);

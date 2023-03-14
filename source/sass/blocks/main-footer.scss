@@ -18,7 +18,7 @@
   }
 
   address {
-    font: 400 16px/22px $ff-placeholder;
+    font: 400 16px/22px $ff-main;
     color: var(--pure-light);
   }
 
@@ -50,7 +50,7 @@
   address a {
     --color: var(--pure-light);
 
-    font: 400 16px/22px $ff-placeholder;
+    font: 400 16px/22px $ff-main;
     color: var(--color);
     opacity: var(--menu-opacity);
 
@@ -262,10 +262,9 @@
 
   @include vp-1023 {
     flex-basis: 40%;
-    max-width: 40%;
-    margin: 0;
     justify-content: flex-end;
     align-items: center;
+    max-width: 40%;
     margin: 0;
     margin-bottom: 6px;
     margin-right: -5px;

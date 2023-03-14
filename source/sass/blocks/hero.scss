@@ -88,7 +88,7 @@
     --border-color: var(--themed-light);
 
     display: inline-flex;
-    min-width: 10ch;
+    min-width: var(--button-min-width);
     max-width: 47ch;
     margin-bottom: 30px;
     padding: 18px 26px;

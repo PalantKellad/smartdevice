@@ -1,0 +1,69 @@
+.products {
+  background-color: var(--themed-dark);
+}
+
+.products__container {
+  grid-column: main;
+  padding-top: 70px;
+
+  @include vp-1023 {
+    padding-top: 54px;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 50px;
+    font: 400 36px / 51px $ff-headings;
+    color: var(--pure-light);
+
+    @include vp-1023 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 85px;
+  margin: 0;
+
+  @include vp-1023 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+.products__card {
+  background: url("../img/background.jpg");
+  background-color: var(--themed-neutral);
+  background-position: var(--bg-position);
+}
+
+.products__link {
+  position: relative;
+  display: block;
+  min-height: 650px;
+  padding: 47px 138px 50px 40px;
+  font: 400 20px / 30px $ff-headings;
+  color: var(--pure-light);
+  background-color: rgba(4, 24, 39, 0.5);
+
+  @include vp-1023 {
+    min-height: 250px;
+    padding: 37px 475px 50px 45px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    background: url("../img/stack.svg#icon-arrow") no-repeat center center;
+    background-size: 8%;
+    background-color: var(--themed-light);
+    border-radius: 3px 0 0;
+  }
+}

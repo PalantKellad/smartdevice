@@ -400,6 +400,7 @@ template {
   --active-filter: hue-rotate(90deg);
   --big-block-trans: 450ms ease-out;
   --small-block-trans: 300 ms ease-out;
+  --button-min-width: 10ch;
 }
 
 @font-face {
@@ -1503,7 +1504,7 @@ button,
 .header-contacts__button {
   --color: var(--base-light);
   display: block;
-  min-width: 10ch;
+  min-width: var(--button-min-width);
   padding: 10px 15px;
   font: 700 14px/16px "Roboto Condensed", "Arial", sans-serif;
   text-transform: uppercase;
@@ -1824,7 +1825,7 @@ button,
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  min-width: 10ch;
+  min-width: var(--button-min-width);
   max-width: 47ch;
   margin-bottom: 30px;
   padding: 18px 26px;
@@ -1870,10 +1871,11 @@ button,
 }
 
 .advantages__container dl {
+  --column-count: 2;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(0, 1fr))[2];
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[var(--column-count)];
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   grid-auto-rows: minmax(0, 1fr);
   gap: 30px;
   margin: 0;
@@ -1899,6 +1901,10 @@ button,
   border-left: 5px solid var(--color);
 }
 
+.advantages__item:nth-child(2n+1):last-child {
+  grid-column: span var(--column-count);
+}
+
 .advantages__item::before {
   --icon-size: 35px;
   content: "";
@@ -1918,7 +1924,7 @@ button,
 .advantages__item::after {
   position: absolute;
   z-index: -1;
-  top: 0px;
+  top: 0;
   left: 0;
   content: "";
   display: block;
@@ -1952,6 +1958,121 @@ button,
   -webkit-transition: var(--small-block-trans);
   -o-transition: var(--small-block-trans);
   transition: var(--small-block-trans);
+}
+
+.about__container {
+  position: relative;
+  grid-column: main;
+  padding-left: 250px;
+  padding-bottom: 119px;
+}
+
+.about__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 150px;
+  min-width: 150px;
+  height: 320px;
+  background: url("../img/2022.png") no-repeat center;
+}
+
+.about__container h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
+  color: var(--themed-dark);
+}
+
+.about__container p {
+  margin: 0;
+  font: 400 16px/22px "PT Mono", "Times New Roman", serif;
+  color: var(--themed-dark);
+}
+
+.about__container hr {
+  border: 0;
+  height: 0.3em;
+}
+
+.about__container button {
+  --text-color: var(--themed-light);
+  --border-color: var(--themed-light);
+  --background-color: transparent;
+  min-width: var(--button-min-width);
+  margin-top: 41px;
+  padding: 14px 50px;
+  font: 400 14px/16px "Roboto Condensed", "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.about__container button.focus-visible:focus {
+  --text-color: var(--base-light);
+  --border-color: var(--themed-dark);
+  --background-color: var(--themed-light);
+}
+
+.products {
+  background-color: var(--themed-dark);
+}
+
+.products__container {
+  grid-column: main;
+  padding-top: 70px;
+}
+
+.products__container h2 {
+  margin: 0;
+  margin-bottom: 50px;
+  font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
+  color: var(--pure-light);
+}
+
+.products__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 85px;
+  margin: 0;
+}
+
+.products__card {
+  background: url("../img/background.jpg");
+  background-color: var(--themed-neutral);
+  background-position: var(--bg-position);
+}
+
+.products__link {
+  position: relative;
+  display: block;
+  min-height: 650px;
+  padding: 47px 138px 50px 40px;
+  font: 400 20px/30px "Roboto Condensed", "Arial", sans-serif;
+  color: var(--pure-light);
+  background-color: rgba(4, 24, 39, 0.5);
+}
+
+.products__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background: url("../img/stack.svg#icon-arrow") no-repeat center center;
+  background-size: 8%;
+  background-color: var(--themed-light);
+  border-radius: 3px 0 0;
 }
 
 /* @mixin hover-focus {
@@ -2122,7 +2243,7 @@ button,
   }
 
   .advantages {
-    padding: 80px 0;
+    padding: 80px 0 75px;
   }
 
   .advantages__item {
@@ -2135,6 +2256,39 @@ button,
 
   .advantages__item dt {
     margin-bottom: 7px;
+  }
+
+  .about__container {
+    padding-left: 175px;
+    padding-bottom: 79px;
+  }
+
+  .about__container::before {
+    top: 6px;
+    left: -4px;
+  }
+
+  .about__container button {
+    margin-top: 16px;
+  }
+
+  .products__container {
+    padding-top: 54px;
+  }
+
+  .products__container h2 {
+    margin-bottom: 40px;
+  }
+
+  .products__list {
+    -ms-grid-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .products__link {
+    min-height: 250px;
+    padding: 37px 475px 50px 45px;
   }
 }
 
@@ -2333,8 +2487,7 @@ button,
   }
 
   .advantages__container dl {
-    -ms-grid-columns: minmax(0, 1fr);
-    grid-template-columns: minmax(0, 1fr);
+    --column-count: 1;
     -ms-grid-rows: (340px)[2] (325px)[2];
     grid-template-rows: repeat(2, 340px) repeat(2, 325px);
   }
@@ -2355,6 +2508,31 @@ button,
   .advantages__item dd {
     font-size: 14px;
     line-height: 19px;
+  }
+
+  .about__container {
+    padding-left: 0;
+  }
+
+  .about__container::before {
+    display: none;
+  }
+
+  .about__container h2 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .about__container p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .about__container button {
+    margin-top: 12px;
+    padding: 9px 40px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
@@ -2471,6 +2649,12 @@ button,
     --text-color: var(--base-light);
     --scaleX: scaleX(1);
   }
+
+  .about__container button:hover:not(.focus-visible) {
+    --text-color: var(--base-light);
+    --border-color: var(--themed-dark);
+    --background-color: var(--themed-light);
+  }
 }
 
 @media all {
@@ -2506,5 +2690,11 @@ button,
   .hero__container a:active:not(.focus-visible) {
     --color: var(--themed-dark);
     --border-color: var(--themed-dark);
+  }
+
+  .about__container button:active:not(.focus-visible) {
+    --text-color: var(--base-light);
+    --border-color: var(--themed-dark);
+    --background-color: var(--themed-dark);
   }
 }

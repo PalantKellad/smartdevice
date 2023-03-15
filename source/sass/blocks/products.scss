@@ -1,23 +1,48 @@
 .products {
+  padding-top: 65px;
+  padding-bottom: 140px;
   background-color: var(--themed-dark);
+
+  @include vp-1023 {
+    padding-top: 55px;
+    padding-bottom: 75px;
+  }
+
+  @include vp-767 {
+    padding-top: 31px;
+    padding-bottom: 86px;
+  }
 }
 
 .products__container {
   grid-column: main;
-  padding-top: 70px;
-
-  @include vp-1023 {
-    padding-top: 54px;
-  }
 
   h2 {
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     font: 400 36px / 51px $ff-headings;
     color: var(--pure-light);
 
     @include vp-1023 {
-      margin-bottom: 40px;
+      margin-bottom: 16px;
+    }
+
+    @include vp-767 {
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+
+  span {
+    font-size: 0;
+    line-height: 0;
+
+    @include vp-767 {
+      display: block;
+      max-width: 18ch;
+      margin-bottom: 29px;
+      font: 400 28px / 39px $ff-headings;
+      color: var(--pure-light);
     }
   }
 }
@@ -37,10 +62,23 @@
 .products__card {
   background: url("../img/background.jpg");
   background-color: var(--themed-neutral);
-  background-position: var(--bg-position);
+  background-position: var(--bg-position-big);
+
+  @include vp-1023 {
+    background-position: var(--bg-position-medium);
+    background-size: 219%;
+    background-repeat: no-repeat;
+  }
+
+  @include vp-767 {
+    background-position: var(--bg-position-small);
+    background-size: 556%;
+  }
 }
 
 .products__link {
+  --button-color: var(--themed-light);
+
   position: relative;
   display: block;
   min-height: 650px;
@@ -48,10 +86,31 @@
   font: 400 20px / 30px $ff-headings;
   color: var(--pure-light);
   background-color: rgba(4, 24, 39, 0.5);
+  transition: background-color $trans-default;
 
   @include vp-1023 {
     min-height: 250px;
     padding: 37px 475px 50px 45px;
+  }
+
+  @include vp-767 {
+    padding: 26px 106px 30px 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  @include hover {
+    background-color: transparent;
+  }
+
+  @include focus {
+    background-color: transparent;
+  }
+
+  @include active {
+    --button-color: var(--themed-action);
+
+    background-color: transparent;
   }
 
   &::after {
@@ -63,7 +122,12 @@
     height: 60px;
     background: url("../img/stack.svg#icon-arrow") no-repeat center center;
     background-size: 8%;
-    background-color: var(--themed-light);
+    background-color: var(--button-color);
     border-radius: 3px 0 0;
+
+    @include vp-767 {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

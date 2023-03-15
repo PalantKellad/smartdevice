@@ -389,6 +389,7 @@ template {
   --themed-neutral: #216695;
   --themed-light: #00b3ff;
   --themed-action: #ff63ff;
+  --themed-accent: #026693;
   --base-neutral: #e5e5e5;
   --base-neutral-light: #ebebeb;
   --base-light: #f2f5f7;
@@ -2022,19 +2023,25 @@ button,
 }
 
 .products {
+  padding-top: 65px;
+  padding-bottom: 140px;
   background-color: var(--themed-dark);
 }
 
 .products__container {
   grid-column: main;
-  padding-top: 70px;
 }
 
 .products__container h2 {
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
   font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
   color: var(--pure-light);
+}
+
+.products__container span {
+  font-size: 0;
+  line-height: 0;
 }
 
 .products__list {
@@ -2049,10 +2056,11 @@ button,
 .products__card {
   background: url("../img/background.jpg");
   background-color: var(--themed-neutral);
-  background-position: var(--bg-position);
+  background-position: var(--bg-position-big);
 }
 
 .products__link {
+  --button-color: var(--themed-light);
   position: relative;
   display: block;
   min-height: 650px;
@@ -2060,6 +2068,13 @@ button,
   font: 400 20px/30px "Roboto Condensed", "Arial", sans-serif;
   color: var(--pure-light);
   background-color: rgba(4, 24, 39, 0.5);
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.products__link.focus-visible:focus {
+  background-color: transparent;
 }
 
 .products__link::after {
@@ -2071,8 +2086,146 @@ button,
   height: 60px;
   background: url("../img/stack.svg#icon-arrow") no-repeat center center;
   background-size: 8%;
-  background-color: var(--themed-light);
+  background-color: var(--button-color);
   border-radius: 3px 0 0;
+}
+
+.feedback {
+  min-height: 840px;
+  background: -o-linear-gradient(310.8deg, var(--themed-accent) 33.6%, var(--themed-light) 33.7%);
+  background: linear-gradient(139.2deg, var(--themed-accent) 33.6%, var(--themed-light) 33.7%);
+}
+
+.feedback__container {
+  position: relative;
+  grid-column: main;
+  padding-top: 165px;
+  padding-left: 630px;
+}
+
+.feedback__container h3 {
+  display: block;
+  margin-left: -5px;
+  margin-bottom: 13px;
+  font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
+  color: var(--pure-light);
+}
+
+.feedback__container p {
+  margin: 0;
+  font: 400 16px/22px "PT Mono", "Times New Roman", serif;
+  color: var(--pure-light);
+}
+
+.feedback__container form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+.feedback__container label {
+  width: 100%;
+}
+
+.feedback__container span {
+  position: relative;
+  z-index: -1;
+  display: block;
+  -webkit-transform: translateY(1.5em);
+  -ms-transform: translateY(1.5em);
+  transform: translateY(1.5em);
+}
+
+.feedback__container input {
+  padding: 15px;
+  background-color: rgba(4, 20, 39, 0.15);
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.feedback__container input[type=text] {
+  width: 100%;
+}
+
+.feedback__container input[type=tel] {
+  width: 100%;
+}
+
+.feedback__container input::-webkit-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__container input::-moz-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__container input:-ms-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__container input::-ms-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__container input::placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__container::before {
+  content: "";
+  position: absolute;
+  top: 29.3%;
+  left: 0;
+  display: block;
+  width: 510px;
+  height: 285px;
+  background: var(--bg-url) no-repeat center;
+}
+
+.feedback__textarea {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+}
+
+.feedback__textarea textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(4, 20, 39, 0.15);
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.feedback__textarea textarea::-webkit-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__textarea textarea::-moz-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__textarea textarea:-ms-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__textarea textarea::-ms-input-placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__textarea textarea::placeholder {
+  color: var(--pure-light);
+}
+
+.feedback__personal-data-check span {
+  position: static;
+  z-index: initial;
+  -webkit-transform: initial;
+  -ms-transform: initial;
+  transform: initial;
 }
 
 /* @mixin hover-focus {
@@ -2272,18 +2425,25 @@ button,
     margin-top: 16px;
   }
 
-  .products__container {
-    padding-top: 54px;
+  .products {
+    padding-top: 55px;
+    padding-bottom: 75px;
   }
 
   .products__container h2 {
-    margin-bottom: 40px;
+    margin-bottom: 16px;
   }
 
   .products__list {
     -ms-grid-columns: minmax(0, 1fr);
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
+  }
+
+  .products__card {
+    background-position: var(--bg-position-medium);
+    background-size: 219%;
+    background-repeat: no-repeat;
   }
 
   .products__link {
@@ -2534,6 +2694,40 @@ button,
     font-size: 14px;
     line-height: 16px;
   }
+
+  .products {
+    padding-top: 31px;
+    padding-bottom: 86px;
+  }
+
+  .products__container h2 {
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .products__container span {
+    display: block;
+    max-width: 18ch;
+    margin-bottom: 29px;
+    font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+    color: var(--pure-light);
+  }
+
+  .products__card {
+    background-position: var(--bg-position-small);
+    background-size: 556%;
+  }
+
+  .products__link {
+    padding: 26px 106px 30px 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .products__link::after {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2655,6 +2849,10 @@ button,
     --border-color: var(--themed-dark);
     --background-color: var(--themed-light);
   }
+
+  .products__link:hover:not(.focus-visible) {
+    background-color: transparent;
+  }
 }
 
 @media all {
@@ -2696,5 +2894,10 @@ button,
     --text-color: var(--base-light);
     --border-color: var(--themed-dark);
     --background-color: var(--themed-dark);
+  }
+
+  .products__link:active:not(.focus-visible) {
+    --button-color: var(--themed-action);
+    background-color: transparent;
   }
 }

@@ -21,6 +21,7 @@ $color-alice-blue:                  #f2f5f7;
 $color-alice-blue-light:            #f8fdff;
 $color-alice-blue-light-op07:       rgba(248, 253, 255, 0.7);
 $color-endeavour:                   #216695;
+$color-cerulean:                    #026693;
 
 // Gradient
 
@@ -91,6 +92,7 @@ $retina-dppx:                       1.5dppx;
   --themed-neutral: #{$color-endeavour};
   --themed-light: #{$color-deep-sky-blue};
   --themed-action: #{$color-pink-flamingo};
+  --themed-accent: #{$color-cerulean};
   --base-neutral: #{$color-whisper};
   --base-neutral-light: #{$color-whisper-light};
   --base-light: #{$color-alice-blue};

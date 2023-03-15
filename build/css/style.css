@@ -2611,8 +2611,8 @@ button:disabled {
   }
 
   .products__card {
-    --bg-size: 219%;
-    --bg-position: var(--bg-position-medium);
+    --product-bg-size: 219%;
+    --product-bg-position: var(--bg-position-medium);
     background-position: var(--product-bg-position);
     background-size: var(--product-bg-size);
     background-repeat: no-repeat;
@@ -2926,8 +2926,8 @@ button:disabled {
   }
 
   .products__card {
-    --bg-size: 556%;
-    --bg-position: var(--bg-position-small);
+    --product-bg-size: 556%;
+    --product-bg-position: var(--bg-position-small);
     background-position: var(--product-bg-position);
     background-size: var(--product-bg-size);
   }

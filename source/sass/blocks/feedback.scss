@@ -193,12 +193,12 @@ button {
   }
 
   &:disabled {
-      --border-color: var(--base-neutral);
-      --bg-color: var(--base-neutral);
-      --text-color: var(--themed-neutral);
+    --border-color: var(--base-neutral);
+    --bg-color: var(--base-neutral);
+    --text-color: var(--themed-neutral);
 
-      pointer-events: none;
-    }
+    pointer-events: none;
+  }
 }
 
 .feedback__textarea {

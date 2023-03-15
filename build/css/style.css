@@ -1777,9 +1777,8 @@ button,
 }
 
 .hero {
-  --size: 130%;
-  --x-coord: 47%;
-  --y-coord: 60%;
+  --hero-bg-size: 100%;
+  --hero-bg-position: 47% 60%;
   min-height: 778px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-url) no-repeat 0 60%;
   background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-url) no-repeat 0 60%;
@@ -2068,10 +2067,11 @@ button,
 }
 
 .products__card {
-  --bg-size: 405%;
+  --product-bg-size: 405%;
+  --product-bg-position: var(--bg-position-big);
   background: var(--bg-url);
   background-color: var(--themed-neutral);
-  background-position: var(--bg-position-big);
+  background-position: var(--product-bg-position);
 }
 
 .products__link {
@@ -2538,12 +2538,11 @@ button:disabled {
   }
 
   .hero {
-    --size: 181%;
-    --x-coord: 20%;
-    --y-coord: 62%;
+    --hero-bg-size: 181%;
+    --hero-bg-position: 20% 62%;
     min-height: 547px;
-    background-position: var(--x-coord) var(--y-coord);
-    background-size: var(--size);
+    background-position: var(--hero-bg-position);
+    background-size: var(--hero-bg-size);
   }
 
   .hero__container {
@@ -2613,8 +2612,9 @@ button:disabled {
 
   .products__card {
     --bg-size: 219%;
-    background-position: var(--bg-position-medium);
-    background-size: var(--bg-size);
+    --bg-position: var(--bg-position-medium);
+    background-position: var(--product-bg-position);
+    background-size: var(--product-bg-size);
     background-repeat: no-repeat;
   }
 
@@ -2812,12 +2812,11 @@ button:disabled {
   }
 
   .hero {
-    --size: 386%;
-    --x-coord: 25.5%;
-    --y-coord: 60%;
+    --hero-bg-size: 386%;
+    --hero-bg-position: 25.6% 60%;
     min-height: 493px;
-    background-position: var(--x-coord) var(--y-coord);
-    background-size: var(--size);
+    background-position: var(--hero-bg-position);
+    background-size: var(--hero-bg-size);
   }
 
   .hero__container {
@@ -2928,8 +2927,9 @@ button:disabled {
 
   .products__card {
     --bg-size: 556%;
-    background-position: var(--bg-position-small);
-    background-size: var(--bg-size);
+    --bg-position: var(--bg-position-small);
+    background-position: var(--product-bg-position);
+    background-size: var(--product-bg-size);
   }
 
   .products__link {
@@ -3194,8 +3194,8 @@ button:disabled {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-retina-url) no-repeat 0 60%;
     background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%;
     background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%;
-    background-size: var(--size);
-    background-position: var(--x-coord) var(--y-coord);
+    background-size: var(--hero-bg-size);
+    background-position: var(--hero-bg-position);
   }
 
   .about__container::before {
@@ -3205,7 +3205,7 @@ button:disabled {
 
   .products__card {
     background: var(--bg-retina-url);
-    background-size: var(--bg-size);
-    background-position: var(--bg-position-big);
+    background-size: var(--product-bg-size);
+    background-position: var(--product-bg-position);
   }
 }

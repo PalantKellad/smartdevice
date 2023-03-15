@@ -60,31 +60,34 @@
 }
 
 .products__card {
-  --bg-size: 405%;
+  --product-bg-size: 405%;
+  --product-bg-position: var(--bg-position-big);
 
   background: var(--bg-url);
   background-color: var(--themed-neutral);
-  background-position: var(--bg-position-big);
+  background-position: var(--product-bg-position);
 
   @media (min-resolution: 2dppx) {
     background: var(--bg-retina-url);
-    background-size: var(--bg-size);
-    background-position: var(--bg-position-big);
+    background-size: var(--product-bg-size);
+    background-position: var(--product-bg-position);
   }
 
   @include vp-1023 {
     --bg-size: 219%;
+    --bg-position: var(--bg-position-medium);
 
-    background-position: var(--bg-position-medium);
-    background-size: var(--bg-size);
+    background-position: var(--product-bg-position);
+    background-size: var(--product-bg-size);
     background-repeat: no-repeat;
   }
 
   @include vp-767 {
     --bg-size: 556%;
+    --bg-position: var(--bg-position-small);
 
-    background-position: var(--bg-position-small);
-    background-size: var(--bg-size);
+    background-position: var(--product-bg-position);
+    background-size: var(--product-bg-size);
   }
 }
 

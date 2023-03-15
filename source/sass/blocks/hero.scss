@@ -1,7 +1,6 @@
 .hero {
-  --size: 130%;
-  --x-coord: 47%;
-  --y-coord: 60%;
+  --hero-bg-size: 100%;
+  --hero-bg-position: 47% 60%;
 
   min-height: 778px;
   background: linear-gradient(
@@ -20,29 +19,27 @@
       rgba(25, 32, 36, 0) 100%
     ),
     var(--bg-retina-url) no-repeat 0 60%;
-    background-size: var(--size);
-    background-position: var(--x-coord) var(--y-coord);
+    background-size: var(--hero-bg-size);
+    background-position: var(--hero-bg-position);
 
   }
 
   @include vp-1023 {
-    --size: 181%;
-    --x-coord: 20%;
-    --y-coord: 62%;
+    --hero-bg-size: 181%;
+    --hero-bg-position: 20% 62%;
 
     min-height: 547px;
-    background-position: var(--x-coord) var(--y-coord);
-    background-size: var(--size);
+    background-position: var(--hero-bg-position);
+    background-size: var(--hero-bg-size);
   }
 
   @include vp-767 {
-    --size: 386%;
-    --x-coord: 25.5%;
-    --y-coord: 60%;
+    --hero-bg-size: 386%;
+    --hero-bg-position: 25.6% 60%;
 
     min-height: 493px;
-    background-position: var(--x-coord) var(--y-coord);
-    background-size: var(--size);
+    background-position: var(--hero-bg-position);
+    background-size: var(--hero-bg-size);
   }
 }
 

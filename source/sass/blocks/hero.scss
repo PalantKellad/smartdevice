@@ -5,9 +5,13 @@
       rgba(25, 32, 36, 0.7) 71.72%,
       rgba(25, 32, 36, 0) 100%
     ),
-    url("../img/background.jpg") no-repeat 0 60%;
+    var(--bg-url) no-repeat 0 60%;
   background-size: cover;
   background-color: var(--themed-dark);
+
+  @include retina {
+    --bg-url: url("../img/background@2x.jpg");
+  }
 
   @include vp-1023 {
     min-height: 547px;

@@ -101,9 +101,14 @@
   }
 
   input {
+    --bg-color: rgba(4, 20, 39, 0.15);
+    --border-color: transparent;
+    --text-color: var(--pure-light);
+
+    color: var(--text-color);
     padding: 15px;
-    background-color: rgba(4, 20, 39, 0.15);
-    border: 1px solid transparent;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
 
     &[type="text"] {
@@ -117,35 +122,83 @@
     &::placeholder {
       color: var(--pure-light);
     }
-  }
 
-  button {
-    min-width: var(--button-min-width);
-    margin-left: 1px;
-    margin-right: 10px;
-    padding: 12px 22px;
-    font: 700 16px / 19px $ff-headings;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-    color: var(--pure-light);
-    background-color: var(--themed-dark);
-    border: 1px solid transparent;
-    border-radius: 3px;
-    cursor: pointer;
-
-    @include vp-1023 {
-      margin-left: 0;
-      margin-right: 55px;
+    @include hover {
+      --border-color: var(--pure-light);
     }
 
-    @include vp-767 {
-      grid-column: span 2;
-      width: 100%;
-      margin: 0;
-      margin-bottom: 25px;
+    @include focus {
+      --border-color: var(--themed-dark);
+      --bg-color: var(--themed-dark);
+    }
+
+    &:disabled {
+      --border-color: var(--base-neutral);
+      --bg-color: var(--base-neutral);
+      --text-color: var(--themed-neutral);
+
+      pointer-events: none;
     }
   }
+}
+
+button {
+  --bg-color: var(--themed-dark);
+  --text-color: var(--pure-light);
+  --border-color: transparent;
+
+  min-width: var(--button-min-width);
+  margin-left: 1px;
+  margin-right: 10px;
+  padding: 12px 22px;
+  font: 700 16px / 19px $ff-headings;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+
+  @include vp-1023 {
+    margin-left: 0;
+    margin-right: 55px;
+  }
+
+  @include vp-767 {
+    grid-column: span 2;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  @include hover {
+    --bg-color: var(--pure-light);
+    --text-color: var(--themed-dark);
+    --border-color: var(--themed-dark);
+  }
+
+  @include focus {
+    --bg-color: var(--pure-light);
+    --text-color: var(--themed-dark);
+    --border-color: var(--themed-dark);
+  }
+
+  @include active {
+    --bg-color: var(--themed-neutral);
+    --text-color: var(--pure-light);
+    --border-color: var(--themed-dark);
+  }
+
+  &:disabled {
+      --border-color: var(--base-neutral);
+      --bg-color: var(--base-neutral);
+      --text-color: var(--themed-neutral);
+
+      pointer-events: none;
+    }
 }
 
 .feedback__textarea {
@@ -153,10 +206,15 @@
   margin-bottom: 31px;
 
   textarea {
+    --border-color: transparent;
+    --bg-color: rgba(4, 20, 39, 0.15);
+    --text-color: var(--pure-light);
+
     width: 100%;
     padding: 28px 15px 11px;
-    background-color: rgba(4, 20, 39, 0.15);
-    border: 1px solid transparent;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
 
     &::placeholder {
@@ -165,6 +223,23 @@
 
     @include vp-767 {
       padding-bottom: 35px;
+    }
+
+    @include hover {
+      --border-color: var(--pure-light);
+    }
+
+    @include focus {
+      --border-color: var(--themed-dark);
+      --bg-color: var(--themed-dark);
+    }
+
+    &:disabled {
+      --border-color: var(--base-neutral);
+      --bg-color: var(--base-neutral);
+      --text-color: var(--themed-neutral);
+
+      pointer-events: none;
     }
   }
 
@@ -193,6 +268,7 @@
     align-items: center;
     padding-left: 10px;
     cursor: pointer;
+    user-select: none;
 
     @include vp-1023 {
       padding-left: 0;
@@ -214,6 +290,11 @@
   }
 
   input[type="checkbox"] {
+    --scale: scale(0);
+    --bg-color: transparent;
+    --border-color: var(--pure-light);
+    --color: var(--pure-light);
+
     position: relative;
     appearance: none;
     min-width: 15px;
@@ -221,8 +302,8 @@
     height: 15px;
     padding: 0;
     color: var(--pure-light);
-    background-color: transparent;
-    border: 1px solid var(--pure-light);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 2px;
     cursor: pointer;
 
@@ -234,9 +315,29 @@
       width: 5px;
       height: 4px;
       background-color: transparent;
-      border-bottom: 1px solid var(--pure-light);
-      border-left: 1px solid var(--pure-light);
-      transform: rotate(-45deg);
+      border-bottom: 1px solid var(--color);
+      border-left: 1px solid var(--color);
+      transform: rotate(-45deg) var(--scale);
+    }
+
+    &:checked {
+      --scale: scale(1);
+    }
+
+    @include hover {
+      --border-color: var(--themed-dark);
+    }
+
+    @include focus {
+      --border-color: var(--themed-dark);
+    }
+
+    &:disabled {
+      --border-color: transparent;
+      --bg-color: var(--base-neutral);
+      --color: var(--themed-neutral);
+
+      pointer-events: none;
     }
   }
 }

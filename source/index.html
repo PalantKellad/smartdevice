@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
 
 <head>
   <meta charset="UTF-8">
@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <div class="page-content wrapper">
-    <header class="page-content__header container header main-header">
+  <div class="page__content wrapper">
+    <header class="page__header container header main-header">
       <nav class="main-header__navigation main-navigation">
         <a class="main-navigation__logo logo" href="/">
           <picture>
@@ -37,7 +37,7 @@
     </header>
     <main>
       <h1 class="visually-hidden">Smart Device — производство печатных плат</h1>
-      <section class="container hero">
+      <section class="container hero" style="--bg-url:url(../img/background.jpg);">
         <div class="hero__container">
           <h2>Печатные платы</h2>
           <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
@@ -114,7 +114,7 @@
           </ul>
         </div>
       </section>
-      <section class="container feedback">
+      <section class="container feedback" id="feedback">
         <h2 class="visually-hidden">Обратная связь</h2>
         <div class="feedback__container" style="--bg-url: url(../img/feedback-plane.png);">
           <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
@@ -143,8 +143,7 @@
               <textarea
                 name="customer-message"
                 rows="6"
-                placeholder="Ваш вопрос">
-              </textarea>
+                placeholder="Ваш вопрос"></textarea>
             </label>
             </div>
             <div class="feedback__personal-data-check">

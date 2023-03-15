@@ -108,5 +108,13 @@
       --border-color: var(--themed-dark);
       --background-color: var(--themed-dark);
     }
+
+    &:disabled {
+      --text-color: var(--base-lightest);
+      --border-color: var(--base-neutral);
+      --background-color: var(--base-neutral);
+
+      pointer-events: none;
+    }
   }
 }

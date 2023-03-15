@@ -60,19 +60,31 @@
 }
 
 .products__card {
-  background: url("../img/background.jpg");
+  --bg-size: 405%;
+
+  background: var(--bg-url);
   background-color: var(--themed-neutral);
   background-position: var(--bg-position-big);
 
+  @media (min-resolution: 2dppx) {
+    background: var(--bg-retina-url);
+    background-size: var(--bg-size);
+    background-position: var(--bg-position-big);
+  }
+
   @include vp-1023 {
+    --bg-size: 219%;
+
     background-position: var(--bg-position-medium);
-    background-size: 219%;
+    background-size: var(--bg-size);
     background-repeat: no-repeat;
   }
 
   @include vp-767 {
+    --bg-size: 556%;
+
     background-position: var(--bg-position-small);
-    background-size: 556%;
+    background-size: var(--bg-size);
   }
 }
 

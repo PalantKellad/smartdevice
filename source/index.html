@@ -37,7 +37,10 @@
     </header>
     <main>
       <h1 class="visually-hidden">Smart Device — производство печатных плат</h1>
-      <section class="container hero" style="--bg-url:url(../img/background.jpg);">
+      <section class="container hero" style="
+      --bg-url:url(../img/background.jpg);
+      --bg-retina-url:url(../img/background@2x.jpg);
+      ">
         <div class="hero__container">
           <h2>Печатные платы</h2>
           <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
@@ -76,7 +79,10 @@
         </div>
       </section>
       <section class="container about">
-        <div class="about__container">
+        <div class="about__container" style="
+          --bg-url:url(../img/2022.png);
+          --bg-retina-url:url(../img/2022@2x.png);
+          ">
           <h2>О компании</h2>
           <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10 дней.</p>
           <hr>
@@ -89,7 +95,10 @@
         <div class="products__container">
           <h2>Smart Device предлагает следующие товары и&nbsp;услуги</h2>
           <span aria-hidden="true">Товары и&nbsp;услуги Smart Device</span>
-          <ul class="products__list reset-list">
+          <ul class="products__list reset-list" style="
+            --bg-url:url(../img/background.jpg);
+            --bg-retina-url:url(../img/background@2x.jpg);
+      ">
             <li class="products__card" style="
               --bg-position-big: 16.3% 60%;
               --bg-position-medium: 29% 86%;
@@ -122,38 +131,22 @@
           <form action="https://echo.htmlacademy.ru/" method="get">
             <label>
               <span>Ваше имя</span>
-              <input
-                type="text"
-                name="customer-name"
-                placeholder="Имя"
-                required>
+              <input type="text" name="customer-name" placeholder="Имя" required>
             </label>
             <label>
               <span>Ваш номер телефона</span>
-              <input
-                type="tel"
-                name="customer-phone"
-                placeholder="Телефон"
-                pattern="^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$"
-                required>
+              <input type="tel" name="customer-phone" placeholder="Телефон" pattern="^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$" required>
             </label>
             <div class="feedback__textarea">
-            <label>
-              <span>Ваш вопрос</span>
-              <textarea
-                name="customer-message"
-                rows="6"
-                placeholder="Ваш вопрос"></textarea>
-            </label>
+              <label>
+                <span>Ваш вопрос</span>
+                <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
+              </label>
             </div>
             <div class="feedback__personal-data-check">
               <label>
                 <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
-                <input
-                  type="checkbox"
-                  name="consent-personal-data"
-                  checked
-                  required>
+                <input type="checkbox" name="consent-personal-data" checked required>
               </label>
             </div>
             <button type="submit">Задать вопрос</button>

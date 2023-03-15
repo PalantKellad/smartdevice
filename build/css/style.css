@@ -1777,6 +1777,9 @@ button,
 }
 
 .hero {
+  --size: 130%;
+  --x-coord: 47%;
+  --y-coord: 60%;
   min-height: 778px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-url) no-repeat 0 60%;
   background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-url) no-repeat 0 60%;
@@ -1981,7 +1984,7 @@ button,
   width: 150px;
   min-width: 150px;
   height: 320px;
-  background: url("../img/2022.png") no-repeat center;
+  background: var(--bg-url) no-repeat center;
 }
 
 .about__container h2 {
@@ -2065,7 +2068,8 @@ button,
 }
 
 .products__card {
-  background: url("../img/background.jpg");
+  --bg-size: 405%;
+  background: var(--bg-url);
   background-color: var(--themed-neutral);
   background-position: var(--bg-position-big);
 }
@@ -2534,9 +2538,12 @@ button:disabled {
   }
 
   .hero {
+    --size: 181%;
+    --x-coord: 20%;
+    --y-coord: 62%;
     min-height: 547px;
-    background-position: 18.5% 62%;
-    background-size: 178.8%;
+    background-position: var(--x-coord) var(--y-coord);
+    background-size: var(--size);
   }
 
   .hero__container {
@@ -2605,8 +2612,9 @@ button:disabled {
   }
 
   .products__card {
+    --bg-size: 219%;
     background-position: var(--bg-position-medium);
-    background-size: 219%;
+    background-size: var(--bg-size);
     background-repeat: no-repeat;
   }
 
@@ -2804,9 +2812,12 @@ button:disabled {
   }
 
   .hero {
+    --size: 386%;
+    --x-coord: 25.5%;
+    --y-coord: 60%;
     min-height: 493px;
-    background-position: 25.5% 60%;
-    background-size: 386%;
+    background-position: var(--x-coord) var(--y-coord);
+    background-size: var(--size);
   }
 
   .hero__container {
@@ -2916,8 +2927,9 @@ button:disabled {
   }
 
   .products__card {
+    --bg-size: 556%;
     background-position: var(--bg-position-small);
-    background-size: 556%;
+    background-size: var(--bg-size);
   }
 
   .products__link {
@@ -3177,8 +3189,23 @@ button:disabled {
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
   .hero {
-    --bg-url: url("../img/background@2x.jpg");
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-retina-url) no-repeat 0 60%;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%;
+    background-size: var(--size);
+    background-position: var(--x-coord) var(--y-coord);
+  }
+
+  .about__container::before {
+    background: var(--bg-retina-url) no-repeat center;
+    background-size: 100%;
+  }
+
+  .products__card {
+    background: var(--bg-retina-url);
+    background-size: var(--bg-size);
+    background-position: var(--bg-position-big);
   }
 }

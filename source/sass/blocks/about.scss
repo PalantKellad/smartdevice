@@ -22,7 +22,12 @@
     width: 150px;
     min-width: 150px;
     height: 320px;
-    background: url("../img/2022.png") no-repeat center;
+    background: var(--bg-url) no-repeat center;
+
+    @media (min-resolution: 2dppx) {
+      background: var(--bg-retina-url) no-repeat center;
+      background-size: 100%;
+    }
 
     @include vp-1023 {
       top: 6px;

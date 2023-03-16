@@ -1667,7 +1667,7 @@ button,
 }
 
 .main-footer__toggle--active::before {
-  --scale: scale(1);
+  --scale: scale(0);
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -2839,7 +2839,7 @@ button,
   }
 
   .main-footer__toggle {
-    --scale: scale(0);
+    --scale: scale(1);
     --color: var(--base-lightest);
     position: absolute;
     inset: 0;
@@ -3005,7 +3005,7 @@ button,
   }
 
   .about__wrapper {
-    --visible-lines-count: 4;
+    --visible-lines-count: 3.5;
   }
 
   .products {
@@ -3309,6 +3309,7 @@ button,
 
   .about__container::before {
     background: var(--about-bg-retina-url) no-repeat center;
+    background-size: 100%;
   }
 
   .products__card {

@@ -22,11 +22,10 @@
     width: 150px;
     min-width: 150px;
     height: 320px;
-    background: var(--bg-url) no-repeat center;
+    background: var(--about-bg-url) no-repeat center;
 
     @media (min-resolution: 2dppx) {
-      background: var(--bg-retina-url) no-repeat center;
-      background-size: 100%;
+      background: var(--about-bg-retina-url) no-repeat center;
     }
 
     @include vp-1023 {
@@ -74,6 +73,7 @@
 
     min-width: var(--button-min-width);
     margin-top: 41px;
+    margin-right: 20px;
     padding: 14px 50px;
     font: 700 14px / 16px $ff-headings;
     text-transform: uppercase;
@@ -90,6 +90,7 @@
     }
 
     @include vp-767 {
+      margin-right: 0;
       margin-top: 12px;
       padding: 9px 40px;
       font-size: 14px;
@@ -121,5 +122,18 @@
 
       pointer-events: none;
     }
+  }
+}
+
+.about__wrapper {
+  --visible-lines-count: 4;
+  overflow: hidden;
+
+  @include vp-1023 {
+    --visible-lines-count: 7;
+  }
+
+  @include vp-767 {
+    --visible-lines-count: 4;
   }
 }

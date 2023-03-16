@@ -1,7 +1,13 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-import {Form} from './modules/form-validate/form';
 import {initAccordions} from './modules/accordion/init-accordion';
+import {initPhoneMask} from './modules/phone-mask/phone-mask';
+
+window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
+    initPhoneMask();
+  });
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
@@ -25,9 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
-    const form = new Form();
-    window.form = form;
-    form.init();
   });
 });
 
@@ -55,3 +58,25 @@ window.addEventListener('DOMContentLoaded', () => {
 // breakpointChecker();
 
 // используйте .closest(el)
+
+// Function to count total
+// number of lines
+function countLines() {
+  const element = document.querySelector('.about__wrapper');
+  const button = document.querySelector('button[data-more-button]');
+  const elementStyles = window.getComputedStyle(element);
+  const elementPropertyLH = elementStyles.getPropertyValue('line-height');
+  const lineHeight = parseInt(elementPropertyLH, 10);
+  const linesCount = getComputedStyle(element).getPropertyValue('--visible-lines-count');
+  const visibleHeight = linesCount * lineHeight;
+  element.style.maxHeight = `${visibleHeight}px`;
+  const expand = () => {
+    element.style.maxHeight = '100%';
+    button.textContent = 'Свернуть';
+  };
+  const collapse = () => {
+    element.style.maxHeight = `${visibleHeight}px`;
+    button.textContent = 'Подробнее';
+  };
+}
+countLines();

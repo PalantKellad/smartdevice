@@ -8,6 +8,13 @@
   <meta name="description" content="Smart Device — производство печатных плат">
   <title>Smart Device — производство печатных плат</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/PTMono-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 </head>
 
 <body>
@@ -30,7 +37,7 @@
             </li>
           </ul>
           <div class="header-contacts__buttons">
-            <a class="header-contacts__button" href="recall.html">Заказать звонок</a>
+            <a class="header-contacts__button" data-open-modal="feedback" href="#">Заказать звонок</a>
           </div>
         </div>
       </nav>
@@ -80,15 +87,19 @@
       </section>
       <section class="container about">
         <div class="about__container" style="
-          --bg-url:url(../img/2022.png);
-          --bg-retina-url:url(../img/2022@2x.png);
+          --about-bg-url:url(../img/2022.png);
+          --about-bg-retina-url:url(../img/2022@2x.png);
+          --about-bg-webp-url:url(../img/2022.webp);
+          --about-bg-webp-retina-url:url(../img/2022@2x.webp);
           ">
           <h2>О компании</h2>
           <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10 дней.</p>
           <hr>
-          <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. <span>Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
-          <p hidden>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000 клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14 офисов по&nbsp;всей стране и&nbsp;20 городов присутствия. Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
-          <button type="button" aria-hidden="true">Подробнее</button>
+          <div class="about__wrapper">
+            <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+            <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000 клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14 офисов по&nbsp;всей стране и&nbsp;20 городов присутствия. Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
+          </div>
+          <button data-more-button type="button">Подробнее</button>
         </div>
       </section>
       <section class="container products">
@@ -98,7 +109,7 @@
           <ul class="products__list reset-list" style="
             --bg-url:url(../img/background.jpg);
             --bg-retina-url:url(../img/background@2x.jpg);
-      ">
+            ">
             <li class="products__card" style="
               --bg-position-big: 16.3% 60%;
               --bg-position-medium: 29% 86%;
@@ -125,25 +136,25 @@
       </section>
       <section class="container feedback" id="feedback">
         <h2 class="visually-hidden">Обратная связь</h2>
-        <div class="feedback__container" style="--bg-url: url(../img/feedback-plane.png);">
+        <div class="feedback__container form" style="--bg-url: url(../img/feedback-plane.png);">
           <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
           <p>Мы&nbsp;проконсультируем Вас бесплатно</p>
-          <form action="https://echo.htmlacademy.ru/" method="get">
+          <form name="feedback" action="https://echo.htmlacademy.ru/" method="get">
             <label>
               <span>Ваше имя</span>
               <input type="text" name="customer-name" placeholder="Имя" required>
             </label>
             <label>
-              <span>Ваш номер телефона</span>
-              <input type="tel" name="customer-phone" placeholder="Телефон" pattern="^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$" required>
+              <span>Ваш телефон</span>
+              <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
             </label>
-            <div class="feedback__textarea">
+            <div class="form__textarea">
               <label>
                 <span>Ваш вопрос</span>
                 <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
               </label>
             </div>
-            <div class="feedback__personal-data-check">
+            <div class="form__personal-data-check">
               <label>
                 <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
                 <input type="checkbox" name="consent-personal-data" checked required>
@@ -153,6 +164,43 @@
           </form>
         </div>
       </section>
+      <div class="page__modal modal modal--preload" data-modal="feedback">
+        <div class="modal__wrapper">
+          <div class="modal__overlay" data-close-modal></div>
+          <div class="modal__content">
+            <h2 class="visually-hidden">Заказать звонок</h2>
+            <div class="form form--modal" style="--bg-url: url(../img/feedback-plane.png);">
+              <h3>Закажите звонок</h3>
+              <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
+              <form name="recall" action="https://echo.htmlacademy.ru/" method="get">
+                <label>
+                  <span>Ваше имя</span>
+                  <input type="text" name="customer-name" placeholder="Имя" required>
+                </label>
+                <label>
+                  <span>Ваш телефон</span>
+                  <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
+                </label>
+                <div class="form__textarea form__textarea--modal">
+                  <label>
+                    <span>Ваш вопрос</span>
+                    <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
+                  </label>
+                </div>
+                <div class="form__personal-data-check form__personal-data-check--modal">
+                  <label>
+                    <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
+                    <input type="checkbox" name="consent-personal-data" checked required>
+                  </label>
+                </div>
+                <button type="submit">Отправить</button>
+              </form>
+            </div>
+            <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer container main-footer">
       <div class="main-footer__container">
@@ -191,7 +239,7 @@
           <section class="main-footer__section main-footer__section--sections-menu" data-accordion="element">
             <h2>
               Разделы сайта
-              <button class="main-footer__toggle" type="button" data-accordion="button" aria-hidden="true">Открыть</button>
+              <button class="main-footer__toggle" type="button" data-accordion="button">Открыть</button>
             </h2>
             <ul class="main-footer__menu sections-menu reset-list" data-accordion="content">
               <li class="sections-menu__item">
@@ -220,7 +268,7 @@
           <section class="main-footer__section main-footer__section--address" data-accordion="element">
             <h2>
               Наш офис
-              <button class="main-footer__toggle" type="button" data-accordion="button" aria-hidden="true">Открыть</button>
+              <button class="main-footer__toggle" type="button" data-accordion="button">Открыть</button>
             </h2>
             <address data-accordion="content">
               <p>г.&nbsp;Мытищи, Олимпийский проспект, д.10</p>

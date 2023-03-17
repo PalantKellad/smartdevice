@@ -1,4 +1,4 @@
-.form {
+.form-wrapper {
   h3 {
     display: block;
     margin: 0;
@@ -207,7 +207,7 @@
     }
   }
 
-  .form__textarea {
+  .form-wrapper__textarea {
     --placeholder-color: var(--pure-light);
 
     grid-column: span 2;
@@ -273,7 +273,7 @@
     }
   }
 
-  .form__personal-data-check {
+  .form-wrapper__personal-data-check {
     --text-color: var(--pure-light);
 
     order: 2;

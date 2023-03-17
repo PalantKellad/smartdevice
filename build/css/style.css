@@ -571,6 +571,10 @@ button,
   appearance: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   position: relative;
   display: -webkit-box;
@@ -685,10 +689,6 @@ button,
 }
 
 .page {
-  scroll-behavior: smooth;
-}
-
-.page__content {
   min-width: 320px;
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
   color: var(--themed-dark);
@@ -2155,7 +2155,7 @@ button,
   background: var(--bg-url) no-repeat center;
 }
 
-.form h3 {
+.form-wrapper h3 {
   display: block;
   margin: 0;
   margin-left: -5px;
@@ -2164,14 +2164,14 @@ button,
   color: var(--pure-light);
 }
 
-.form p {
+.form-wrapper p {
   margin: 0;
   margin-bottom: 11px;
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
   color: var(--pure-light);
 }
 
-.form form {
+.form-wrapper form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 1fr))[2];
@@ -2181,7 +2181,7 @@ button,
   column-gap: 30px;
 }
 
-.form label {
+.form-wrapper label {
   --label-opacity: 0;
   --label-translateY: translateY(1.5em);
   --label-font-size: 0;
@@ -2191,18 +2191,18 @@ button,
   width: 100%;
 }
 
-.form label:nth-child(2n+1):last-of-type {
+.form-wrapper label:nth-child(2n+1):last-of-type {
   -ms-grid-column-span: 2;
   grid-column: span 2;
 }
 
-.form label:focus-within {
+.form-wrapper label:focus-within {
   --label-opacity: 1;
   --label-translateY: translateY(0);
   --label-font-size: initial;
 }
 
-.form span {
+.form-wrapper span {
   display: block;
   padding-left: 15px;
   font-size: var(--label-font-size);
@@ -2215,7 +2215,7 @@ button,
   transition: 0.15s ease-out;
 }
 
-.form input {
+.form-wrapper input {
   --bg-color: rgba(4, 20, 39, 0.15);
   --border-color: transparent;
   --text-color: var(--pure-light);
@@ -2227,48 +2227,48 @@ button,
   border-radius: 3px;
 }
 
-.form input[type=text] {
+.form-wrapper input[type=text] {
   width: 100%;
 }
 
-.form input[type=tel] {
+.form-wrapper input[type=tel] {
   width: 100%;
 }
 
-.form input::-webkit-input-placeholder {
+.form-wrapper input::-webkit-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form input::-moz-placeholder {
+.form-wrapper input::-moz-placeholder {
   color: var(--placeholder-color);
 }
 
-.form input:-ms-input-placeholder {
+.form-wrapper input:-ms-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form input::-ms-input-placeholder {
+.form-wrapper input::-ms-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form input::placeholder {
+.form-wrapper input::placeholder {
   color: var(--placeholder-color);
 }
 
-.form input.focus-visible:focus {
+.form-wrapper input.focus-visible:focus {
   --border-color: var(--themed-dark);
   --bg-color: var(--themed-dark);
   --placeholder-color: transparent;
 }
 
-.form input:disabled {
+.form-wrapper input:disabled {
   --border-color: var(--base-neutral);
   --bg-color: var(--base-neutral);
   --text-color: var(--themed-neutral);
   pointer-events: none;
 }
 
-.form button {
+.form-wrapper button {
   --bg-color: var(--themed-dark);
   --text-color: var(--pure-light);
   --border-color: transparent;
@@ -2291,30 +2291,30 @@ button,
   user-select: none;
 }
 
-.form button.focus-visible:focus {
+.form-wrapper button.focus-visible:focus {
   --bg-color: var(--pure-light);
   --text-color: var(--themed-dark);
   --border-color: var(--themed-dark);
 }
 
-.form button:disabled {
+.form-wrapper button:disabled {
   --border-color: var(--base-neutral);
   --bg-color: var(--base-neutral);
   --text-color: var(--themed-neutral);
   pointer-events: none;
 }
 
-.form--modal {
+.form-wrapper--modal {
   --form-layout: flex;
 }
 
-.form--modal h3 {
+.form-wrapper--modal h3 {
   margin-left: 1px;
   margin-bottom: 5px;
   font: 400 30px/42px "Roboto Condensed", "Arial", sans-serif;
 }
 
-.form--modal form {
+.form-wrapper--modal form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2324,26 +2324,26 @@ button,
   flex-direction: column;
 }
 
-.form--modal p {
+.form-wrapper--modal p {
   max-width: 40ch;
   margin-bottom: 15px;
 }
 
-.form--modal button {
+.form-wrapper--modal button {
   margin: 0;
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 19px;
 }
 
-.form .form__textarea {
+.form-wrapper .form-wrapper__textarea {
   --placeholder-color: var(--pure-light);
   -ms-grid-column-span: 2;
   grid-column: span 2;
   margin-bottom: 31px;
 }
 
-.form .form__textarea textarea {
+.form-wrapper .form-wrapper__textarea textarea {
   --border-color: transparent;
   --bg-color: rgba(4, 20, 39, 0.15);
   --text-color: var(--pure-light);
@@ -2355,51 +2355,51 @@ button,
   border-radius: 3px;
 }
 
-.form .form__textarea textarea::-webkit-input-placeholder {
+.form-wrapper .form-wrapper__textarea textarea::-webkit-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form .form__textarea textarea::-moz-placeholder {
+.form-wrapper .form-wrapper__textarea textarea::-moz-placeholder {
   color: var(--placeholder-color);
 }
 
-.form .form__textarea textarea:-ms-input-placeholder {
+.form-wrapper .form-wrapper__textarea textarea:-ms-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form .form__textarea textarea::-ms-input-placeholder {
+.form-wrapper .form-wrapper__textarea textarea::-ms-input-placeholder {
   color: var(--placeholder-color);
 }
 
-.form .form__textarea textarea::placeholder {
+.form-wrapper .form-wrapper__textarea textarea::placeholder {
   color: var(--placeholder-color);
 }
 
-.form .form__textarea textarea.focus-visible:focus {
+.form-wrapper .form-wrapper__textarea textarea.focus-visible:focus {
   --border-color: var(--themed-dark);
   --bg-color: var(--themed-dark);
 }
 
-.form .form__textarea textarea:disabled {
+.form-wrapper .form-wrapper__textarea textarea:disabled {
   --border-color: var(--base-neutral);
   --bg-color: var(--base-neutral);
   --text-color: var(--themed-neutral);
   pointer-events: none;
 }
 
-.form .form__textarea textarea:focus-within {
+.form-wrapper .form-wrapper__textarea textarea:focus-within {
   --placeholder-color: transparent;
 }
 
-.form .form__textarea--modal {
+.form-wrapper .form-wrapper__textarea--modal {
   margin-bottom: 26px;
 }
 
-.form .form__textarea--modal textarea {
+.form-wrapper .form-wrapper__textarea--modal textarea {
   padding-top: 21px;
 }
 
-.form .form__personal-data-check {
+.form-wrapper .form-wrapper__personal-data-check {
   --text-color: var(--pure-light);
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
@@ -2412,7 +2412,7 @@ button,
   align-items: flex-end;
 }
 
-.form .form__personal-data-check label {
+.form-wrapper .form-wrapper__personal-data-check label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2428,11 +2428,11 @@ button,
   user-select: none;
 }
 
-.form .form__personal-data-check label:focus-within {
+.form-wrapper .form-wrapper__personal-data-check label:focus-within {
   --text-color: var(--themed-dark);
 }
 
-.form .form__personal-data-check span {
+.form-wrapper .form-wrapper__personal-data-check span {
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
@@ -2447,7 +2447,7 @@ button,
   transform: initial;
 }
 
-.form .form__personal-data-check input[type=checkbox] {
+.form-wrapper .form-wrapper__personal-data-check input[type=checkbox] {
   --scale: scale(0);
   --bg-color: transparent;
   --border-color: var(--pure-light);
@@ -2467,7 +2467,7 @@ button,
   cursor: pointer;
 }
 
-.form .form__personal-data-check input[type=checkbox]::before {
+.form-wrapper .form-wrapper__personal-data-check input[type=checkbox]::before {
   content: "";
   position: absolute;
   top: 20%;
@@ -2482,22 +2482,22 @@ button,
   transform: rotate(-45deg) var(--scale);
 }
 
-.form .form__personal-data-check input[type=checkbox]:checked {
+.form-wrapper .form-wrapper__personal-data-check input[type=checkbox]:checked {
   --scale: scale(1);
 }
 
-.form .form__personal-data-check input[type=checkbox].focus-visible:focus {
+.form-wrapper .form-wrapper__personal-data-check input[type=checkbox].focus-visible:focus {
   --border-color: var(--themed-dark);
 }
 
-.form .form__personal-data-check input[type=checkbox]:disabled {
+.form-wrapper .form-wrapper__personal-data-check input[type=checkbox]:disabled {
   --border-color: transparent;
   --bg-color: var(--base-neutral);
   --color: var(--themed-neutral);
   pointer-events: none;
 }
 
-.form .form__personal-data-check--modal span {
+.form-wrapper .form-wrapper__personal-data-check--modal span {
   padding-left: 0;
 }
 
@@ -2747,25 +2747,25 @@ button,
     display: none;
   }
 
-  .form h3 {
+  .form-wrapper h3 {
     margin-left: 0;
     margin-bottom: 8px;
   }
 
-  .form p {
+  .form-wrapper p {
     margin-bottom: 3px;
   }
 
-  .form button {
+  .form-wrapper button {
     margin-left: 0;
     margin-right: 55px;
   }
 
-  .form .form__textarea {
+  .form-wrapper .form-wrapper__textarea {
     margin-bottom: 30px;
   }
 
-  .form .form__personal-data-check label {
+  .form-wrapper .form-wrapper__personal-data-check label {
     padding-left: 0;
     padding-bottom: 3px;
   }
@@ -3049,28 +3049,28 @@ button,
     padding-bottom: 85px;
   }
 
-  .form h3 {
+  .form-wrapper h3 {
     margin-bottom: 7px;
     font-size: 30px;
     line-height: 42px;
   }
 
-  .form p {
+  .form-wrapper p {
     margin-bottom: 11px;
     font-size: 14px;
     line-height: 19px;
   }
 
-  .form label {
+  .form-wrapper label {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
 
-  .form span {
+  .form-wrapper span {
     padding-left: 0;
   }
 
-  .form button {
+  .form-wrapper button {
     -ms-grid-column-span: 2;
     grid-column: span 2;
     width: 100%;
@@ -3078,22 +3078,22 @@ button,
     margin-bottom: 25px;
   }
 
-  .form .form__textarea textarea {
+  .form-wrapper .form-wrapper__textarea textarea {
     padding-bottom: 35px;
   }
 
-  .form .form__textarea {
+  .form-wrapper .form-wrapper__textarea {
     -ms-grid-column-span: 2;
     grid-column: span 2;
     margin-bottom: 25px;
   }
 
-  .form .form__personal-data-check {
+  .form-wrapper .form-wrapper__personal-data-check {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
 
-  .form .form__personal-data-check label {
+  .form-wrapper .form-wrapper__personal-data-check label {
     padding-left: 5px;
   }
 }
@@ -3222,25 +3222,25 @@ button,
     background-color: transparent;
   }
 
-  .form input:hover:not(.focus-visible) {
+  .form-wrapper input:hover:not(.focus-visible) {
     --border-color: var(--pure-light);
   }
 
-  .form button:hover:not(.focus-visible) {
+  .form-wrapper button:hover:not(.focus-visible) {
     --bg-color: var(--pure-light);
     --text-color: var(--themed-dark);
     --border-color: var(--themed-dark);
   }
 
-  .form .form__textarea textarea:hover:not(.focus-visible) {
+  .form-wrapper .form-wrapper__textarea textarea:hover:not(.focus-visible) {
     --border-color: var(--pure-light);
   }
 
-  .form .form__personal-data-check label:hover:not(.focus-visible) {
+  .form-wrapper .form-wrapper__personal-data-check label:hover:not(.focus-visible) {
     --text-color: var(--themed-dark);
   }
 
-  .form .form__personal-data-check input[type=checkbox]:hover:not(.focus-visible) {
+  .form-wrapper .form-wrapper__personal-data-check input[type=checkbox]:hover:not(.focus-visible) {
     --border-color: var(--themed-dark);
   }
 }
@@ -3291,7 +3291,7 @@ button,
     background-color: transparent;
   }
 
-  .form button:active:not(.focus-visible) {
+  .form-wrapper button:active:not(.focus-visible) {
     --bg-color: var(--themed-neutral);
     --text-color: var(--pure-light);
     --border-color: var(--themed-dark);

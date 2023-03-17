@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <div class="page__content wrapper">
+  <div class="page wrapper">
     <header class="page__header container header main-header">
       <nav class="main-header__navigation main-navigation">
         <a class="main-navigation__logo logo" href="/">
@@ -136,7 +136,7 @@
       </section>
       <section class="container feedback" id="feedback">
         <h2 class="visually-hidden">Обратная связь</h2>
-        <div class="feedback__container form" style="--bg-url: url(../img/feedback-plane.png);">
+        <div class="feedback__container form-wrapper" style="--bg-url: url(../img/feedback-plane.png);">
           <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
           <p>Мы&nbsp;проконсультируем Вас бесплатно</p>
           <form name="feedback" action="https://echo.htmlacademy.ru/" method="get">
@@ -148,13 +148,13 @@
               <span>Ваш телефон</span>
               <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
             </label>
-            <div class="form__textarea">
+            <div class="form-wrapper__textarea">
               <label>
                 <span>Ваш вопрос</span>
                 <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
               </label>
             </div>
-            <div class="form__personal-data-check">
+            <div class="form-wrapper__personal-data-check">
               <label>
                 <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
                 <input type="checkbox" name="consent-personal-data" checked required>

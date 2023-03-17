@@ -55,6 +55,8 @@
   }
 
   &__close-btn {
+    --color: var(--pure-light);
+
     position: absolute;
     top: 24px;
     right: 12px;
@@ -69,7 +71,7 @@
       display: block;
       width: 28px;
       height: 1px;
-      background-color: var(--pure-light);
+      background-color: var(--color);
       transform: rotate(45deg);
     }
 
@@ -78,8 +80,25 @@
       display: block;
       width: 28px;
       height: 1px;
-      background-color: var(--pure-light);
+      background-color: var(--color);
       transform: rotate(-45deg);
+    }
+
+    @include hover {
+      --color: var(--themed-dark);
+    }
+
+    @include focus {
+      --color: var(--themed-dark);
+    }
+
+    @include active {
+      --color: var(--themed-neutral);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
 

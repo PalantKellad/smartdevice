@@ -804,6 +804,7 @@ html {
 }
 
 .modal__close-btn {
+  --color: var(--pure-light);
   position: absolute;
   top: 24px;
   right: 12px;
@@ -819,7 +820,7 @@ html {
   display: block;
   width: 28px;
   height: 1px;
-  background-color: var(--pure-light);
+  background-color: var(--color);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -830,10 +831,19 @@ html {
   display: block;
   width: 28px;
   height: 1px;
-  background-color: var(--pure-light);
+  background-color: var(--color);
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+.modal__close-btn.focus-visible:focus {
+  --color: var(--themed-dark);
+}
+
+.modal__close-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .modal--preload {
@@ -3166,6 +3176,10 @@ html {
     opacity: 0.8;
   }
 
+  .modal__close-btn:hover:not(.focus-visible) {
+    --color: var(--themed-dark);
+  }
+
   .custom-select__item[aria-selected=true]:hover:not(.focus-visible) {
     background-color: rgba(0, 0, 0, 0.2);
   }
@@ -3246,6 +3260,10 @@ html {
 }
 
 @media all {
+  .modal__close-btn:active:not(.focus-visible) {
+    --color: var(--themed-neutral);
+  }
+
   .header-contacts__link:active:not(.focus-visible) {
     --filter: var(--active-filter);
     opacity: var(--hover-opacity);

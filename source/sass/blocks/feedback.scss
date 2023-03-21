@@ -53,4 +53,9 @@
 .feedback__form {
   flex: 0 0 47.5%;
   min-width: 581px;
+
+  @include vp-1023 {
+    flex-basis: 0;
+    min-width: 100%;
+  }
 }

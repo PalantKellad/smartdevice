@@ -1759,6 +1759,8 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+  align-content: start;
   gap: 15px;
 }
 
@@ -2793,6 +2795,12 @@ html {
 
   .feedback__container::before {
     display: none;
+  }
+
+  .feedback__form {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    min-width: 100%;
   }
 
   .form-wrapper h3 {

@@ -12,6 +12,7 @@
   place-items: center;
   padding: 5px;
   color: var(--color);
+  transition: color $trans-default, opacity $trans-default;
 
   @include hover {
     --color: var(--themed-light);

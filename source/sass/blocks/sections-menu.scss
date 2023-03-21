@@ -28,6 +28,7 @@
   color: var(--color);
   opacity: var(--menu-opacity);
   user-select: none;
+  transition: color $trans-default;
 
   @include hover {
     --color: var(--themed-light);

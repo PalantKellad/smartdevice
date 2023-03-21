@@ -817,6 +817,9 @@ html {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .modal__close-btn::after {
@@ -828,6 +831,9 @@ html {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .modal__close-btn.focus-visible:focus {
@@ -1493,6 +1499,9 @@ html {
   align-items: center;
   font: 400 16px/18px "PT Mono", "Times New Roman", serif;
   color: var(--color);
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .header-contacts__link::before {
@@ -1560,6 +1569,9 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-contacts__button.focus-visible:focus {
@@ -1574,6 +1586,11 @@ html {
 
 .logo {
   min-width: 215px;
+  -webkit-transition: opacity 0.3s ease, -webkit-filter 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-filter 0.3s ease;
+  -o-transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 .logo.focus-visible:focus {
@@ -1625,6 +1642,9 @@ html {
   font: 400 16px/22px "PT Mono", "Times New Roman", serif;
   color: var(--color);
   opacity: var(--menu-opacity);
+  -webkit-transition: color 0.3s ease, opacity 0.3s ease;
+  -o-transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .main-footer address a.focus-visible:focus {
@@ -1768,6 +1788,9 @@ html {
   place-items: center;
   padding: 5px;
   color: var(--color);
+  -webkit-transition: color 0.3s ease, opacity 0.3s ease;
+  -o-transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .social__link.focus-visible:focus {
@@ -1808,6 +1831,9 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .sections-menu__link.focus-visible:focus {
@@ -1893,6 +1919,9 @@ html {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .hero__container a.focus-visible:focus {
@@ -2062,6 +2091,9 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .about__container button.focus-visible:focus {
@@ -2265,6 +2297,9 @@ html {
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form-wrapper input[type=text] {
@@ -2360,6 +2395,9 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form-wrapper button.focus-visible:focus {

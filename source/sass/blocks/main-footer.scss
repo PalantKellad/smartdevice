@@ -64,6 +64,7 @@
     font: 400 16px/22px $ff-main;
     color: var(--color);
     opacity: var(--menu-opacity);
+    transition: color $trans-default, opacity $trans-default;
 
     @include hover {
       --color: var(--themed-light);

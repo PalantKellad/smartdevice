@@ -73,6 +73,7 @@
       height: 1px;
       background-color: var(--color);
       transform: rotate(45deg);
+      transition: background-color $trans-default;
     }
 
     &::after {
@@ -82,6 +83,7 @@
       height: 1px;
       background-color: var(--color);
       transform: rotate(-45deg);
+      transition: background-color $trans-default;
     }
 
     @include hover {

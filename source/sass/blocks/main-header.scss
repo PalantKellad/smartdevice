@@ -13,6 +13,7 @@
     width: 100%;
     background: linear-gradient(180deg, var(--themed-dark) 8%, rgba(4, 24, 39, 0) 100%);
   }
+
   @include vp-1023 {
     min-height: 93px;
     padding-top: 16px;

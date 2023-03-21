@@ -63,6 +63,7 @@
   align-items: center;
   font: 400 16px/18px $ff-main;
   color: var(--color);
+  transition: color $trans-default;
 
   &::before {
     content: "";
@@ -133,6 +134,7 @@
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
+  transition: color $trans-default, background-color $trans-default, border-color $trans-default;
 
   @include hover {
     --color: var(--themed-light);

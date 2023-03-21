@@ -1,23 +1,22 @@
 function showMore() {
-  const element = document.querySelector('.about__wrapper');
+  const smallTextElement = document.querySelector('.about__wrapper [data-more-text="small"]');
   const button = document.querySelector('button[data-more-button]');
-  if (element) {
-    const elementStyles = window.getComputedStyle(element);
-    const elementPropertyLH = elementStyles.getPropertyValue('line-height');
-    const lineHeight = parseInt(elementPropertyLH, 10);
-    const linesCount = getComputedStyle(element).getPropertyValue('--visible-lines-count');
-    const visibleHeight = linesCount * lineHeight;
+  if (smallTextElement) {
+    const maxHeight = getComputedStyle(smallTextElement).getPropertyValue('--max-height');
 
     if (button) {
-      element.style.maxHeight = `${visibleHeight}px`;
+      if (maxHeight === 0) {
+        smallTextElement.style.maxHeight = '0';
+      }
+
       button.addEventListener('click', function () {
-        if (element.style.maxHeight === `${visibleHeight}px`) {
+        if (smallTextElement.style.maxHeight === '0px') {
           // Если элемент свернут, то разворачиваем его
-          element.style.maxHeight = '100%';
+          smallTextElement.style.maxHeight = '100%';
           button.textContent = 'Свернуть';
         } else {
           // Если элемент развернут, то сворачиваем его
-          element.style.maxHeight = `${visibleHeight}px`;
+          smallTextElement.style.maxHeight = '0';
           button.textContent = 'Подробнее';
         }
       });

@@ -2114,6 +2114,16 @@ html {
   overflow: hidden;
 }
 
+.about__wrapper p[data-more-text=small] {
+  display: block;
+  overflow: hidden;
+  --max-height: 100;
+}
+
+.about__wrapper p[data-more-text=medium] {
+  --max-height: 100;
+}
+
 .products {
   padding-top: 65px;
   padding-bottom: 140px;
@@ -2817,6 +2827,14 @@ html {
     margin-top: 16px;
   }
 
+  .about__wrapper p[data-more-text=small] {
+    --max-height: 100;
+  }
+
+  .about__wrapper p[data-more-text=medium] {
+    --max-height: 0;
+  }
+
   .about__wrapper {
     --visible-lines-count: 7;
   }
@@ -3125,6 +3143,14 @@ html {
     padding: 9px 40px;
     font-size: 14px;
     line-height: 16px;
+  }
+
+  .about__wrapper p[data-more-text=small] {
+    --max-height: 0;
+  }
+
+  .about__wrapper p[data-more-text=medium] {
+    --max-height: 0;
   }
 
   .about__wrapper {

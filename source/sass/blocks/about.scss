@@ -130,7 +130,34 @@
 
 .about__wrapper {
   --visible-lines-count: 4;
+
   overflow: hidden;
+
+  p[data-more-text="small"] {
+    display: block;
+    overflow: hidden;
+    --max-height: 100;
+
+    @include vp-1023 {
+      --max-height: 100;
+    }
+
+    @include vp-767 {
+      --max-height: 0;
+    }
+  }
+
+  p[data-more-text="medium"] {
+    --max-height: 100;
+
+    @include vp-1023 {
+      --max-height: 0;
+    }
+
+    @include vp-767 {
+      --max-height: 0;
+    }
+  }
 
   @include vp-1023 {
     --visible-lines-count: 7;

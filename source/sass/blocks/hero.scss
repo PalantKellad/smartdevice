@@ -8,7 +8,8 @@
       rgba(25, 32, 36, 0.7) 71.72%,
       rgba(25, 32, 36, 0) 100%
     ),
-    var(--bg-url) no-repeat 0 60%;
+    var(--bg-url) no-repeat 0 60%,
+    var(--themed-dark);
   background-size: cover;
   background-color: var(--themed-dark);
 
@@ -18,7 +19,8 @@
         rgba(25, 32, 36, 0.7) 71.72%,
         rgba(25, 32, 36, 0) 100%
       ),
-      var(--bg-retina-url) no-repeat 0 60%;
+      var(--bg-retina-url) no-repeat 0 60%,
+    var(--themed-dark);
     background-size: var(--hero-bg-size);
     background-position: var(--hero-bg-position);
   }

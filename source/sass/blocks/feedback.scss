@@ -15,7 +15,12 @@
 .feedback__container {
   position: relative;
   grid-column: main;
-  padding: 165px 10px 50px 630px;
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-between;
+  padding-top: 165px;
+  padding-right: 10px;
+  padding-bottom: 50px;
 
   @include vp-1023 {
     padding: 0;
@@ -30,16 +35,22 @@
 
   &::before {
     content: "";
-    position: absolute;
-    top: 29.3%;
-    left: 0;
     display: block;
-    width: 510px;
-    height: 285px;
+    max-width: 513px;
+    min-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 14.7%;
     background: var(--bg-url) no-repeat center;
+    background-size: contain;
 
     @include vp-1023 {
       display: none;
     }
   }
+}
+
+.feedback__form {
+  flex: 0 0 47.5%;
+  min-width: 581px;
 }

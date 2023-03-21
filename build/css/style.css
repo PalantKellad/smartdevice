@@ -2162,18 +2162,37 @@ html {
 .feedback__container {
   position: relative;
   grid-column: main;
-  padding: 165px 10px 50px 630px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 165px;
+  padding-right: 10px;
+  padding-bottom: 50px;
 }
 
 .feedback__container::before {
   content: "";
-  position: absolute;
-  top: 29.3%;
-  left: 0;
   display: block;
-  width: 510px;
-  height: 285px;
+  max-width: 513px;
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 14.7%;
   background: var(--bg-url) no-repeat center;
+  background-size: contain;
+}
+
+.feedback__form {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 47.5%;
+  flex: 0 0 47.5%;
+  min-width: 581px;
 }
 
 .form-wrapper h3 {
@@ -2369,7 +2388,7 @@ html {
   --bg-color: rgba(4, 20, 39, 0.15);
   --text-color: var(--pure-light);
   width: 100%;
-  padding: 28px 15px 11px;
+  padding: 23px 15px 17px;
   color: var(--text-color);
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);

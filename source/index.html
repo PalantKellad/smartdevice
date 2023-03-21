@@ -136,32 +136,34 @@
       </section>
       <section class="container feedback" id="feedback">
         <h2 class="visually-hidden">Обратная связь</h2>
-        <div class="feedback__container form-wrapper" style="--bg-url: url(../img/feedback-plane.png);">
-          <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
-          <p>Мы&nbsp;проконсультируем Вас бесплатно</p>
-          <form name="feedback" action="https://echo.htmlacademy.ru/" method="get">
-            <label>
-              <span>Ваше имя</span>
-              <input type="text" name="customer-name" placeholder="Имя" required>
-            </label>
-            <label>
-              <span>Ваш телефон</span>
-              <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
-            </label>
-            <div class="form-wrapper__textarea">
+        <div class="feedback__container" style="--bg-url: url(../img/feedback-plane.png);">
+          <div class="feedback__form form-wrapper">
+            <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
+            <p>Мы&nbsp;проконсультируем Вас бесплатно</p>
+            <form name="feedback" action="https://echo.htmlacademy.ru/" method="get">
               <label>
-                <span>Ваш вопрос</span>
-                <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
+                <span>Ваше имя</span>
+                <input type="text" name="customer-name" placeholder="Имя" required>
               </label>
-            </div>
-            <div class="form-wrapper__personal-data-check">
               <label>
-                <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
-                <input type="checkbox" name="consent-personal-data" checked required>
+                <span>Ваш телефон</span>
+                <input type="tel" name="customer-phone" placeholder="Телефон" pattern=".{18}" required>
               </label>
-            </div>
-            <button type="submit">Задать вопрос</button>
-          </form>
+              <div class="form-wrapper__textarea">
+                <label>
+                  <span>Ваш вопрос</span>
+                  <textarea name="customer-message" rows="6" placeholder="Ваш вопрос"></textarea>
+                </label>
+              </div>
+              <div class="form-wrapper__personal-data-check">
+                <label>
+                  <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
+                  <input type="checkbox" name="consent-personal-data" checked required>
+                </label>
+              </div>
+              <button type="submit">Задать вопрос</button>
+            </form>
+          </div>
         </div>
       </section>
       <div class="page__modal modal modal--preload" data-modal="feedback">
@@ -169,7 +171,7 @@
           <div class="modal__overlay" data-close-modal></div>
           <div class="modal__content">
             <h2 class="visually-hidden">Заказать звонок</h2>
-            <div class="form-wrapper form-wrapper--modal" style="--bg-url: url(../img/feedback-plane.png);">
+            <div class="form-wrapper form-wrapper--modal">
               <h3>Закажите звонок</h3>
               <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
               <form name="recall" action="https://echo.htmlacademy.ru/" method="get">

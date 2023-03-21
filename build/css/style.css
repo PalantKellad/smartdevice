@@ -1952,10 +1952,6 @@ html {
   border-left: 5px solid var(--color);
 }
 
-.advantages__item:nth-child(2n+1):last-child {
-  grid-column: span var(--column-count);
-}
-
 .advantages__item::before {
   --icon-size: 35px;
   content: "";

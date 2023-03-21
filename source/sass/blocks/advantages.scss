@@ -53,10 +53,6 @@
     padding: 30px 32px 29px 24px;
   }
 
-  &:nth-child(2n+1):last-child {
-    grid-column: span var(--column-count);
-  }
-
   &::before {
     --icon-size: 35px;
 

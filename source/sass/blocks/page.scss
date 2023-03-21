@@ -8,7 +8,6 @@
   position: sticky;
   z-index: 999;
   top: 0;
-  margin-bottom: -18px;
 
   @include vp-1023 {
     position: static;

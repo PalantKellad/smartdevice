@@ -19,16 +19,20 @@
 .header-contacts__list {
   flex: 1 1 82%;
   max-width: 82%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: 121px;
+  column-gap: 4%;
   row-gap: 20px;
+  justify-items: start;
   margin: 0;
   padding-right: 15.3%;
   padding-left: 12.5%;
 
   @include vp-1023 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: initial;
     justify-content: flex-end;
     column-gap: 20px;
     padding-left: 20px;

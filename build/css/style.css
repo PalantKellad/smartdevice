@@ -476,12 +476,6 @@ textarea {
   resize: none;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0 1000px #ffffff;
-  box-shadow: inset 0 0 0 1000px #ffffff;
-  -webkit-text-fill-color: #000000;
-}
-
 input,
 textarea {
   border-radius: 0;
@@ -2292,6 +2286,37 @@ html {
 
 .form-wrapper input::placeholder {
   color: var(--placeholder-color);
+}
+
+.form-wrapper input:-webkit-autofill {
+  font: inherit;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.form-wrapper input:autofill {
+  font: inherit;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.form-wrapper input:-webkit-autofill {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-text-fill-color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-wrapper input:-internal-autofill-selected {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-text-fill-color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  -o-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .form-wrapper input.focus-visible:focus {

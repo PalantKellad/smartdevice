@@ -102,6 +102,28 @@
       color: var(--placeholder-color);
     }
 
+    &:autofill {
+      font: inherit;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
+
+    &:-webkit-autofill {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -webkit-text-fill-color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &:-internal-autofill-selected {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -webkit-text-fill-color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
     @include hover {
       --border-color: var(--pure-light);
     }

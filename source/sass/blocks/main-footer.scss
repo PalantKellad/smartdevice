@@ -163,12 +163,12 @@
     }
   }
 
-  &:focus {
+  @include focus {
     --color: var(--themed-light);
   }
 
-  &:active {
-    --color: var(--themed-light);
+  @include active {
+    --color: var(--base-lightest);
   }
 }
 
@@ -243,6 +243,11 @@
       margin-bottom: 15px;
       padding-bottom: 10px;
     }
+
+    address {
+      margin-left: -4px;
+      padding-left: 4px;
+    }
   }
 }
 
@@ -278,4 +283,6 @@
 
 .main-footer__menu {
   margin: 0;
+  margin-left: -4px;
+  padding-left: 4px;
 }

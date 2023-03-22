@@ -63,12 +63,12 @@
   --product-bg-size: 405%;
   --product-bg-position: var(--bg-position-big);
 
-  background: var(--bg-url);
+  background: var(--bg-url) no-repeat;
   background-color: var(--themed-neutral);
   background-position: var(--product-bg-position);
 
   @media (min-resolution: 2dppx) {
-    background: var(--bg-retina-url);
+    background: var(--bg-retina-url) no-repeat;
     background-size: var(--product-bg-size);
     background-position: var(--product-bg-position);
   }
@@ -79,7 +79,6 @@
 
     background-position: var(--product-bg-position);
     background-size: var(--product-bg-size);
-    background-repeat: no-repeat;
   }
 
   @include vp-767 {

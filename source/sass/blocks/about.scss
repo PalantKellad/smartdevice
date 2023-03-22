@@ -129,41 +129,31 @@
 }
 
 .about__wrapper {
-  --visible-lines-count: 4;
+  --max-height: 100%;
 
-  overflow: hidden;
+  &--roll-up {
+    --max-height: 0;
+  }
 
-  p[data-more-text="small"] {
+  p[data-more-text] {
     display: block;
     overflow: hidden;
-    --max-height: 100;
+    transition: max-height $trans-default;
+  }
+
+  p[data-more-text="small"] {
+    max-height: 100%;
 
     @include vp-1023 {
-      --max-height: 100;
+      max-height: 100%;
     }
 
     @include vp-767 {
-      --max-height: 0;
+      max-height: var(--max-height);
     }
   }
 
   p[data-more-text="medium"] {
-    --max-height: 100;
-
-    @include vp-1023 {
-      --max-height: 0;
-    }
-
-    @include vp-767 {
-      --max-height: 0;
-    }
-  }
-
-  @include vp-1023 {
-    --visible-lines-count: 7;
-  }
-
-  @include vp-767 {
-    --visible-lines-count: 3.5;
+    max-height: var(--max-height);
   }
 }

@@ -15,6 +15,7 @@
   <link rel="preload" href="fonts/PTMono-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/RobotoCondensed-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/RobotoCondensed-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="img/background.webp" as="image" crossorigin="anonymous">
 </head>
 
 <body>
@@ -45,8 +46,8 @@
     <main>
       <h1 class="visually-hidden">Smart Device — производство печатных плат</h1>
       <section class="container hero" style="
-      --bg-url:url(../img/background.jpg);
-      --bg-retina-url:url(../img/background@2x.jpg);
+        --bg-url:url(../img/background.webp);
+        --bg-retina-url:url(../img/background@2x.webp);
       ">
         <div class="hero__container">
           <h2>Печатные платы</h2>
@@ -87,10 +88,8 @@
       </section>
       <section class="container about">
         <div class="about__container" style="
-          --about-bg-url:url(../img/2022.png);
-          --about-bg-retina-url:url(../img/2022@2x.png);
-          --about-bg-webp-url:url(../img/2022.webp);
-          --about-bg-webp-retina-url:url(../img/2022@2x.webp);
+          --about-bg-url:url(../img/2022.webp);
+          --about-bg-retina-url:url(../img/2022@2x.webp);
           ">
           <h2>О компании</h2>
           <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10 дней.</p>
@@ -108,8 +107,8 @@
           <h2>Smart Device предлагает следующие товары и&nbsp;услуги</h2>
           <span aria-hidden="true">Товары и&nbsp;услуги Smart Device</span>
           <ul class="products__list reset-list" style="
-            --bg-url:url(../img/background.jpg);
-            --bg-retina-url:url(../img/background@2x.jpg);
+            --bg-url:url(../img/background.webp);
+            --bg-retina-url:url(../img/background@2x.webp);
             ">
             <li class="products__card" style="
               --bg-position-big: 16.3% 60%;
@@ -119,16 +118,16 @@
               <a class="products__link" href="manufacture.html">Производство печатных плат</a>
             </li>
             <li class="products__card" style="
-            --bg-position-big: 47% 61%;
-            --bg-position-medium: 77% 54%;
-            --bg-position-small: 30% 84%;
+              --bg-position-big: 47% 61%;
+              --bg-position-medium: 77% 54%;
+              --bg-position-small: 30% 84%;
             ">
               <a class="products__link" href="assembling.html">Монтаж печатных плат</a>
             </li>
             <li class="products__card" style="
-            --bg-position-big: 78% 58%;
-            --bg-position-medium: 18% 60%;
-            --bg-position-small: 72% 65%;
+              --bg-position-big: 78% 58%;
+              --bg-position-medium: 18% 60%;
+              --bg-position-small: 72% 65%;
             ">
               <a class="products__link" href="accessories.html">Комплектующие для светотехники</a>
             </li>
@@ -137,7 +136,10 @@
       </section>
       <section class="container feedback" id="feedback">
         <h2 class="visually-hidden">Обратная связь</h2>
-        <div class="feedback__container" style="--bg-url: url(../img/feedback-plane.png);">
+        <div class="feedback__container" style="
+          --bg-url: url(../img/feedback-plane.webp);
+          --bg-retina-url: url(../img/feedback-plane@2x.webp);
+          ">
           <div class="feedback__form form-wrapper">
             <h3>Остались вопросы? Задайте их&nbsp;нам!</h3>
             <p>Мы&nbsp;проконсультируем Вас бесплатно</p>

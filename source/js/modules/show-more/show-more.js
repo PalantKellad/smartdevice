@@ -1,22 +1,16 @@
 function showMore() {
-  const smallTextElement = document.querySelector('.about__wrapper [data-more-text="small"]');
+  const parentElement = document.querySelector('.about__wrapper');
   const button = document.querySelector('button[data-more-button]');
-  if (smallTextElement) {
-    const maxHeight = getComputedStyle(smallTextElement).getPropertyValue('--max-height');
-
+  if (parentElement) {
     if (button) {
-      if (maxHeight === 0) {
-        smallTextElement.style.maxHeight = '0';
-      }
-
+      parentElement.classList.add('about__wrapper--roll-up');
       button.addEventListener('click', function () {
-        if (smallTextElement.style.maxHeight === '0px') {
-          // Если элемент свернут, то разворачиваем его
-          smallTextElement.style.maxHeight = '100%';
+        if (parentElement.classList.contains('about__wrapper--roll-up')) {
+          parentElement.classList.remove('about__wrapper--roll-up');
           button.textContent = 'Свернуть';
         } else {
           // Если элемент развернут, то сворачиваем его
-          smallTextElement.style.maxHeight = '0';
+          parentElement.classList.add('about__wrapper--roll-up');
           button.textContent = 'Подробнее';
         }
       });

@@ -44,6 +44,11 @@
     background: var(--bg-url) no-repeat center;
     background-size: contain;
 
+    @media (min-resolution: 2dppx) {
+      background: var(--bg-retina-url) no-repeat center;
+      background-size: contain;
+    }
+
     @include vp-1023 {
       display: none;
     }

@@ -1396,7 +1396,7 @@ html {
 .main-header::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 99%;
   height: 20px;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(8%, var(--themed-dark)), to(rgba(4, 24, 39, 0)));
@@ -1841,14 +1841,21 @@ html {
 }
 
 .hero {
-  --hero-bg-size: 100%;
-  --hero-bg-position: 47% 60%;
+  position: relative;
   min-height: 778px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-url) no-repeat 0 60%, var(--themed-dark);
-  background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-url) no-repeat 0 60%, var(--themed-dark);
-  background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-url) no-repeat 0 60%, var(--themed-dark);
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
+  background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
+  background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
   background-size: cover;
-  background-color: var(--themed-dark);
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .hero__container {
@@ -2779,11 +2786,11 @@ html {
   }
 
   .hero {
-    --hero-bg-size: 181%;
-    --hero-bg-position: 20% 62%;
     min-height: 547px;
-    background-position: var(--hero-bg-position);
-    background-size: var(--hero-bg-size);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
+    background-size: cover;
   }
 
   .hero__container {
@@ -3050,11 +3057,11 @@ html {
   }
 
   .hero {
-    --hero-bg-size: 386%;
-    --hero-bg-position: 25.6% 60%;
     min-height: 493px;
-    background-position: var(--hero-bg-position);
-    background-size: var(--hero-bg-size);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
+    background-size: cover;
   }
 
   .hero__container {
@@ -3454,14 +3461,6 @@ html {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
-  .hero {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--bg-retina-url) no-repeat 0 60%, var(--themed-dark);
-    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%, var(--themed-dark);
-    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--bg-retina-url) no-repeat 0 60%, var(--themed-dark);
-    background-size: var(--hero-bg-size);
-    background-position: var(--hero-bg-position);
-  }
-
   .about__container::before {
     background: var(--about-bg-retina-url) no-repeat center;
     background-size: 100%;

@@ -2687,7 +2687,7 @@ html {
   }
 
   .page__header {
-    position: static;
+    position: relative;
   }
 
   .main-header {

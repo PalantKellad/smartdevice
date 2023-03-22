@@ -1396,7 +1396,7 @@ html {
 .main-header::after {
   content: "";
   position: absolute;
-  top: 99%;
+  top: calc(100% - 5px);
   height: 20px;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(8%, var(--themed-dark)), to(rgba(4, 24, 39, 0)));
@@ -1841,13 +1841,13 @@ html {
 }
 
 .hero {
+  --hero-bg-url: var(--var-bg-big-url);
   position: relative;
   min-height: 778px;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
-  background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
-  background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-big.webp") no-repeat, var(--themed-dark);
-  background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--hero-bg-url) no-repeat center/cover, var(--themed-dark);
+  background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--hero-bg-url) no-repeat center/cover, var(--themed-dark);
+  background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--hero-bg-url) no-repeat center/cover, var(--themed-dark);
 }
 
 .hero__image {
@@ -2679,6 +2679,12 @@ html {
   }
 */
 
+@media (max-width: 1919px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1919px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1919px) and (min-resolution: 2dppx) {
+  .hero {
+    --hero-bg-url: var(--var-bg-retina-big-url);
+  }
+}
+
 @media (max-width: 1023px) {
   .container {
     --padding: 50px;
@@ -2786,11 +2792,8 @@ html {
   }
 
   .hero {
+    --hero-bg-url: var(--var-bg-medium-url);
     min-height: 547px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
-    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
-    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-medium.webp") no-repeat, var(--themed-dark);
-    background-size: cover;
   }
 
   .hero__container {
@@ -2917,6 +2920,12 @@ html {
   .form-wrapper .form-wrapper__personal-data-check label {
     padding-left: 0;
     padding-bottom: 3px;
+  }
+}
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
+  .hero {
+    --hero-bg-url: var(--var-bg-retina-medium-url);
   }
 }
 
@@ -3057,11 +3066,8 @@ html {
   }
 
   .hero {
+    --hero-bg-url: var(--var-bg-small-url);
     min-height: 493px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
-    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
-    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/hero-small.webp") no-repeat, var(--themed-dark);
-    background-size: cover;
   }
 
   .hero__container {
@@ -3307,6 +3313,12 @@ html {
     -webkit-transform: translateY(calc(-50% - 5px));
     -ms-transform: translateY(calc(-50% - 5px));
     transform: translateY(calc(-50% - 5px));
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 767px) and (min-resolution: 2dppx) {
+  .hero {
+    --hero-bg-url: var(--var-bg-retina-small-url);
   }
 }
 

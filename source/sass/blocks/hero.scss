@@ -1,4 +1,6 @@
 .hero {
+  --hero-bg-url: var(--var-bg-big-url);
+
   position: relative;
   min-height: 778px;
   overflow: hidden;
@@ -7,32 +9,33 @@
       rgba(25, 32, 36, 0.7) 71.72%,
       rgba(25, 32, 36, 0) 100%
     ),
-    url("../img/hero-big.webp") no-repeat,
+    var(--hero-bg-url) no-repeat center / cover,
     var(--themed-dark);
-    background-size: cover;
+
+  @include vp-1919 {
+    @media (min-resolution: 2dppx) {
+      --hero-bg-url: var(--var-bg-retina-big-url);
+    }
+  }
 
   @include vp-1023 {
+    --hero-bg-url: var(--var-bg-medium-url);
+
+    @media (min-resolution: 2dppx) {
+      --hero-bg-url: var(--var-bg-retina-medium-url);
+    }
+
     min-height: 547px;
-    background: linear-gradient(
-        180deg,
-        rgba(25, 32, 36, 0.7) 71.72%,
-        rgba(25, 32, 36, 0) 100%
-      ),
-      url("../img/hero-medium.webp") no-repeat,
-      var(--themed-dark);
-      background-size: cover;
   }
 
   @include vp-767 {
+    --hero-bg-url: var(--var-bg-small-url);
+
+    @media (min-resolution: 2dppx) {
+      --hero-bg-url: var(--var-bg-retina-small-url);
+    }
+
     min-height: 493px;
-    background: linear-gradient(
-        180deg,
-        rgba(25, 32, 36, 0.7) 71.72%,
-        rgba(25, 32, 36, 0) 100%
-      ),
-      url("../img/hero-small.webp") no-repeat,
-      var(--themed-dark);
-      background-size: cover;
   }
 }
 
@@ -126,7 +129,9 @@
     border-radius: 3px;
     user-select: none;
     cursor: pointer;
-    transition: color $trans-default, background-color $trans-default,
+    transition:
+      color $trans-default,
+      background-color $trans-default,
       border-color $trans-default;
 
     @include vp-1023 {

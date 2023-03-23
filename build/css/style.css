@@ -2671,6 +2671,12 @@ html {
   }
 */
 
+@media (min-width: 768px) {
+  .main-footer__menu {
+    max-height: 100%;
+  }
+}
+
 @media (max-width: 1919px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1919px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1919px) and (min-resolution: 2dppx) {
   .hero {
     --hero-bg-url: var(--var-bg-retina-big-url);

@@ -1850,14 +1850,6 @@ html {
   background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--hero-bg-url) no-repeat center/cover, var(--themed-dark);
 }
 
-.hero__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
 .hero__container {
   grid-column: main;
   display: -ms-grid;

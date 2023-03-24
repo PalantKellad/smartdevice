@@ -8,6 +8,7 @@
   transform: scale(1.1);
   visibility: hidden;
   opacity: 0;
+  background-color: rgba(3, 16, 27, 0.7);
 
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
 
@@ -22,7 +23,6 @@
 
   &__wrapper {
     transform: translateZ(0);
-    background-color: rgba(3, 16, 27, 0.7);
     position: relative;
 
     display: flex;

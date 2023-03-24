@@ -51,11 +51,12 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 350px));
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
   margin: 0;
 
   @include vp-1023 {
     grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
     justify-content: initial;
   }
 }

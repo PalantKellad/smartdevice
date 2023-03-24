@@ -2157,9 +2157,12 @@ html {
 .products__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(0, 1fr))[3];
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 85px;
+  -ms-grid-columns: (minmax(0, 350px))[3];
+  grid-template-columns: repeat(3, minmax(0, 350px));
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 30px;
   margin: 0;
 }
 
@@ -2860,7 +2863,9 @@ html {
   .products__list {
     -ms-grid-columns: minmax(0, 1fr);
     grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
+    -webkit-box-pack: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial;
   }
 
   .products__card {
